@@ -1,0 +1,74 @@
+{
+  "toolName": "d360_datastream_create_snowflake",
+  "params": {
+    "streamName": "Westerly_Orders",
+    "label": "Westerly Orders",
+    "connectionName": "Westerly_Snowflake",
+    "database": "WESTERLY_MARKET",
+    "schema": "SALES",
+    "objectName": "ORDERS",
+    "dataSpaceName": "default",
+    "dloName": "Westerly_Orders__dll",
+    "dloLabel": "Westerly Orders",
+    "category": "Engagement",
+    "eventDateTimeFieldName": "order_date",
+    "dataAccessMode": "DIRECT_ACCESS",
+    "isAccelerationEnabled": false,
+    "fields": [
+      {
+        "name": "ORDER_ID",
+        "label": "ORDER_ID",
+        "dataType": "Text",
+        "isPrimaryKey": true
+      },
+      {
+        "name": "CUSTOMER_ID",
+        "label": "CUSTOMER_ID",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "STORE_ID",
+        "label": "STORE_ID",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "ORDER_DATE",
+        "label": "ORDER_DATE",
+        "dataType": "DateTime",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "ORDER_STATUS",
+        "label": "ORDER_STATUS",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "CHANNEL",
+        "label": "CHANNEL",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "ORDER_TOTAL",
+        "label": "ORDER_TOTAL",
+        "dataType": "Number",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "ITEM_COUNT",
+        "label": "ITEM_COUNT",
+        "dataType": "Number",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "LAST_MODIFIED",
+        "label": "LAST_MODIFIED",
+        "dataType": "DateTime",
+        "isPrimaryKey": false
+      }
+    ]
+  }
+}

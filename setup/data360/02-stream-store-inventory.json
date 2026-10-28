@@ -1,0 +1,49 @@
+{
+  "toolName": "d360_datastream_create_snowflake",
+  "params": {
+    "streamName": "Westerly_Store_Inventory",
+    "label": "Westerly Store Inventory",
+    "connectionName": "Westerly_Snowflake",
+    "database": "WESTERLY_MARKET",
+    "schema": "INVENTORY",
+    "objectName": "STORE_INVENTORY",
+    "dataSpaceName": "default",
+    "dloName": "Westerly_Store_Inventory__dll",
+    "dloLabel": "Westerly Store Inventory",
+    "category": "Other",
+    "dataAccessMode": "DIRECT_ACCESS",
+    "isAccelerationEnabled": false,
+    "fields": [
+      {
+        "name": "INVENTORY_ID",
+        "label": "INVENTORY_ID",
+        "dataType": "Text",
+        "isPrimaryKey": true
+      },
+      {
+        "name": "STORE_ID",
+        "label": "STORE_ID",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "SKU",
+        "label": "SKU",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "QUANTITY_ON_HAND",
+        "label": "QUANTITY_ON_HAND",
+        "dataType": "Number",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "LAST_MODIFIED",
+        "label": "LAST_MODIFIED",
+        "dataType": "DateTime",
+        "isPrimaryKey": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,6 @@
+CustomerId,FirstName,LastName,Email
+CUST_001,Stephanie,Smith,customer1@example.com
+CUST_002,Marcus,Johnson,customer2@example.com
+CUST_003,Priya,Patel,customer3@example.com
+CUST_004,Daniel,Kim,customer4@example.com
+CUST_005,Elena,Rodriguez,customer5@example.com

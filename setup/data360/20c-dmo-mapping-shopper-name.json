@@ -1,0 +1,13 @@
+{
+ "input": {
+  "sourceEntityDeveloperName": "Westerly_Shopper_Name__dll",
+  "targetEntityDeveloperName": "Westerly_Shopper_Name__dlm",
+  "fieldMapping": [
+   {"sourceFieldDeveloperName": "Id__c", "targetFieldDeveloperName": "Id__c"},
+   {"sourceFieldDeveloperName": "PartyId__c", "targetFieldDeveloperName": "PartyId__c"},
+   {"sourceFieldDeveloperName": "FirstName__c", "targetFieldDeveloperName": "FirstName__c"},
+   {"sourceFieldDeveloperName": "LastName__c", "targetFieldDeveloperName": "LastName__c"}
+  ]
+ },
+ "dataspace": "default"
+}

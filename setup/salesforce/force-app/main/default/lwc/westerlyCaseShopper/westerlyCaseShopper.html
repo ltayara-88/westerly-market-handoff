@@ -1,0 +1,53 @@
+<template>
+    <lightning-card title="Westerly Shopper" icon-name="standard:customer_360">
+        <div class="slds-p-horizontal_small">
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading case" size="small"></lightning-spinner>
+            </template>
+            <template lwc:elseif={errorMessage}>
+                <p class="slds-text-color_error">{errorMessage}</p>
+            </template>
+            <template lwc:else>
+                <section class="summary">
+                    <h3 class="label">Conversation summary from the Google agent</h3>
+                    <template lwc:if={summary}>
+                        <lightning-formatted-text value={summary} linkify></lightning-formatted-text>
+                    </template>
+                    <template lwc:else><p class="muted">No summary on this case.</p></template>
+                    <template lwc:if={caseOrderId}>
+                        <p class="case-order">Order on this case: <strong>{caseOrderId}</strong></p>
+                    </template>
+                </section>
+
+                <template lwc:if={hasNoContact}>
+                    <p class="muted">Add a contact to this case to see the shopper profile.</p>
+                </template>
+                <template lwc:elseif={isUnlinked}>
+                    <p class="muted">This contact isn't linked to a unified profile yet. It appears after the next identity resolution run.</p>
+                </template>
+                <template lwc:elseif={unifiedId}>
+                    <c-westerly-shopper-card unified-id={unifiedId}></c-westerly-shopper-card>
+
+                    <h3 class="label orders-title">Recent orders</h3>
+                    <template lwc:if={hasOrders}>
+                        <ul class="orders">
+                            <template for:each={orders} for:item="order">
+                                <li key={order.orderId} class={order.rowClass}>
+                                    <span class="order-id">{order.orderId}</span>
+                                    <span class="order-date">
+                                        <lightning-formatted-date-time value={order.orderDate} year="numeric" month="short" day="numeric"></lightning-formatted-date-time>
+                                    </span>
+                                    <span class="order-status">{order.status}</span>
+                                    <span class="order-total">
+                                        <lightning-formatted-number value={order.total} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                                    </span>
+                                </li>
+                            </template>
+                        </ul>
+                    </template>
+                    <template lwc:else><p class="muted">No orders yet.</p></template>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

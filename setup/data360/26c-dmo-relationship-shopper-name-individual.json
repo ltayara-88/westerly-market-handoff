@@ -1,0 +1,1 @@
+{"dataModelObjectName":"Westerly_Shopper_Name__dlm","dataspace":"default","input":{"relationships":[{"sourceObjectName":"Westerly_Shopper_Name__dlm","sourceFieldName":"PartyId__c","targetObjectName":"ssot__Individual__dlm","targetFieldName":"ssot__Id__c","cardinality":"ManyToOne","relationshipOwner":"DataCloud"}]}}

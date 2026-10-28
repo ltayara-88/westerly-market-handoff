@@ -1,0 +1,44 @@
+{
+  "toolName": "d360_dmo_create",
+  "params": {
+    "input": {
+      "name": "Store_Inventory",
+      "label": "Store Inventory",
+      "category": "Other",
+      "dataSpaceName": "default",
+      "description": "Westerly store inventory from Snowflake",
+      "fields": [
+        {
+          "name": "Inventory_Id__c",
+          "label": "Inventory Id",
+          "dataType": "Text",
+          "isPrimaryKey": true
+        },
+        {
+          "name": "Store_Id__c",
+          "label": "Store Id",
+          "dataType": "Text",
+          "isPrimaryKey": false
+        },
+        {
+          "name": "SKU__c",
+          "label": "SKU",
+          "dataType": "Text",
+          "isPrimaryKey": false
+        },
+        {
+          "name": "Quantity_On_Hand__c",
+          "label": "Quantity On Hand",
+          "dataType": "Number",
+          "isPrimaryKey": false
+        },
+        {
+          "name": "Last_Modified__c",
+          "label": "Last Modified",
+          "dataType": "DateTime",
+          "isPrimaryKey": false
+        }
+      ]
+    }
+  }
+}

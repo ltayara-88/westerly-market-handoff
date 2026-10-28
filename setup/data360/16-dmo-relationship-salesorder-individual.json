@@ -1,0 +1,16 @@
+{
+  "dataModelObjectName": "ssot__SalesOrder__dlm",
+  "dataspace": "default",
+  "input": {
+    "relationships": [
+      {
+        "sourceObjectName": "ssot__SalesOrder__dlm",
+        "sourceFieldName": "ssot__SoldToCustomerId__c",
+        "targetObjectName": "ssot__Individual__dlm",
+        "targetFieldName": "ssot__Id__c",
+        "cardinality": "ManyToOne",
+        "relationshipOwner": "DataCloud"
+      }
+    ]
+  }
+}

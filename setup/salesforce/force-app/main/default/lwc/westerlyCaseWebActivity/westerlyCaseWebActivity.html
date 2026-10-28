@@ -1,0 +1,35 @@
+<template>
+    <lightning-card title="Website Activity" icon-name="standard:event">
+        <div class="slds-p-horizontal_small">
+            <template lwc:if={isLoading}>
+                <lightning-spinner alternative-text="Loading website activity" size="small"></lightning-spinner>
+            </template>
+            <template lwc:elseif={errorMessage}>
+                <p class="slds-text-color_error">{errorMessage}</p>
+            </template>
+            <template lwc:elseif={hasNoContact}>
+                <p class="muted">Add a contact to this case to see the shopper's website activity.</p>
+            </template>
+            <template lwc:elseif={isUnlinked}>
+                <p class="muted">This contact isn't linked to a unified profile yet. It appears after the next identity resolution run.</p>
+            </template>
+            <template lwc:elseif={unifiedId}>
+                <h3 class="label">Recent visits to the Westerly website</h3>
+                <template lwc:if={hasEvents}>
+                    <ul class="events">
+                        <template for:each={events} for:item="event">
+                            <li key={event.eventId} class={event.rowClass}>
+                                <span class="event-time">
+                                    <lightning-formatted-date-time value={event.isoTime} month="short" day="numeric" hour="numeric" minute="2-digit"></lightning-formatted-date-time>
+                                </span>
+                                <span class="event-label">{event.label}</span>
+                                <span class="event-detail">{event.detail}</span>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template lwc:else><p class="muted">No website visits yet.</p></template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

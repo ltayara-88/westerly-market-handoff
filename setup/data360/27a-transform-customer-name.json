@@ -1,0 +1,68 @@
+{
+  "dataTransformObject": {
+    "name": "Westerly_Customer_Name_Transform",
+    "label": "Westerly Customer Name Transform",
+    "description": "Daily batch copy of each customer full name from Westerly_Customers__dll into Westerly_Customer_Names__dll, mapped to Party Identification (type Full Name) so the unified profile Customer IDs card shows the name",
+    "dataSpaceName": "default",
+    "type": "BATCH",
+    "definition": {
+      "type": "DCSQL",
+      "version": "67.0",
+      "name": "Westerly_Customer_Name_Transform",
+      "label": "Westerly Customer Name Transform",
+      "outputDataObjects": [
+        {
+          "name": "Westerly_Customer_Names__dll",
+          "label": "Customer Names",
+          "dataspaceName": "default",
+          "type": "dataLakeObject",
+          "category": "Profile",
+          "fields": [
+            {
+              "name": "Id__c",
+              "label": "Customer Name Id",
+              "type": "Text",
+              "isPrimaryKey": true
+            },
+            {
+              "name": "PartyId__c",
+              "label": "Customer Id",
+              "type": "Text",
+              "isPrimaryKey": false
+            },
+            {
+              "name": "FullName__c",
+              "label": "Full Name",
+              "type": "Text",
+              "isPrimaryKey": false
+            },
+            {
+              "name": "PartyIdName__c",
+              "label": "Party Identification Name",
+              "type": "Text",
+              "isPrimaryKey": false
+            },
+            {
+              "name": "PartyIdType__c",
+              "label": "Party Identification Type",
+              "type": "Text",
+              "isPrimaryKey": false
+            }
+          ]
+        }
+      ],
+      "manifest": {
+        "nodes": {
+          "model.input1": {
+            "name": "input1",
+            "compiled_code": "SELECT CONCAT(customer_id__c, '-name') AS Id__c, customer_id__c AS PartyId__c, TRIM(CONCAT(COALESCE(first_name__c, ''), ' ', COALESCE(last_name__c, ''))) AS FullName__c, 'Full Name' AS PartyIdName__c, 'Full Name' AS PartyIdType__c FROM Westerly_Customers__dll WHERE first_name__c IS NOT NULL OR last_name__c IS NOT NULL",
+            "config": {
+              "materialized": "table"
+            },
+            "relation_name": "Westerly_Customer_Names__dll"
+          }
+        }
+      }
+    }
+  }
+}

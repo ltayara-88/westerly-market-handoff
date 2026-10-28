@@ -1,0 +1,65 @@
+<template>
+    <article class="card">
+        <template lwc:if={isLoading}>
+            <div class="state"><lightning-spinner alternative-text="Loading shopper" size="small" variant="inverse"></lightning-spinner></div>
+        </template>
+        <template lwc:elseif={errorMessage}>
+            <p class="state">{errorMessage}</p>
+        </template>
+        <template lwc:else>
+            <header class="identity">
+                <div class="avatar" aria-hidden="true">{initials}</div>
+                <div>
+                    <h2 class="name">{profile.name}</h2>
+                    <p class="location">{location}</p>
+                </div>
+            </header>
+
+            <dl class="section">
+                <div class="row">
+                    <lightning-icon icon-name="utility:identity" size="x-small" variant="inverse" class="icon"></lightning-icon>
+                    <dt>Customer ID</dt>
+                    <dd>{profile.customerId}</dd>
+                </div>
+                <div class="row">
+                    <lightning-icon icon-name="utility:email" size="x-small" variant="inverse" class="icon"></lightning-icon>
+                    <dt>Email Address</dt>
+                    <dd>{profile.email}</dd>
+                </div>
+                <div class="row">
+                    <lightning-icon icon-name="utility:phone_portrait" size="x-small" variant="inverse" class="icon"></lightning-icon>
+                    <dt>Phone Number</dt>
+                    <dd>{profile.phone}</dd>
+                </div>
+                <template lwc:if={hasAddress}>
+                    <div class="row">
+                        <lightning-icon icon-name="utility:location" size="x-small" variant="inverse" class="icon"></lightning-icon>
+                        <dt>Address</dt>
+                        <dd>{profile.addressLine1}<br />{cityLine}</dd>
+                    </div>
+                </template>
+            </dl>
+
+            <dl class="section">
+                <div class="row">
+                    <lightning-icon icon-name="utility:cart" size="x-small" variant="inverse" class="icon"></lightning-icon>
+                    <dt>Lifetime Value</dt>
+                    <dd>
+                        <template lwc:if={hasOrders}>
+                            <lightning-formatted-number value={profile.lifetimeValue} format-style="currency" currency-code="USD"></lightning-formatted-number>
+                            <span class="muted">
+                                (Avg <lightning-formatted-number value={profile.avgCartValue} format-style="currency" currency-code="USD"></lightning-formatted-number>)
+                            </span>
+                        </template>
+                        <template lwc:else>No orders yet</template>
+                    </dd>
+                </div>
+                <div class="row">
+                    <lightning-icon icon-name="utility:orders" size="x-small" variant="inverse" class="icon"></lightning-icon>
+                    <dt>Total Orders</dt>
+                    <dd>{profile.totalOrders}</dd>
+                </div>
+            </dl>
+        </template>
+    </article>
+</template>

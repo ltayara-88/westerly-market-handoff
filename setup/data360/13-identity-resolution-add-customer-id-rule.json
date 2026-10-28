@@ -1,0 +1,44 @@
+{
+  "toolName": "d360_ir_update",
+  "params": {
+    "identityResolution": "Individual_wstr",
+    "input": {
+      "label": "Westerly Customer Match",
+      "description": "Westerly customers: match on Westerly Customer ID (Party Identification), email as backup",
+      "matchRules": {
+        "rules": [
+          {
+            "label": "Customer ID",
+            "criteria": {
+              "criteria": [
+                {
+                  "entityName": "ssot__PartyIdentification__dlm",
+                  "fieldName": "ssot__IdentificationNumber__c",
+                  "matchMethodType": "Exact",
+                  "shouldMatchOnBlank": false,
+                  "partyIdentificationInfo": {
+                    "partyName": "Westerly Customer ID",
+                    "partyType": "Westerly Customer ID"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "label": "Email backup",
+            "criteria": {
+              "criteria": [
+                {
+                  "entityName": "ssot__ContactPointEmail__dlm",
+                  "fieldName": "ssot__EmailAddress__c",
+                  "matchMethodType": "ExactNormalized",
+                  "shouldMatchOnBlank": false
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

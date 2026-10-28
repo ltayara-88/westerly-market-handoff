@@ -1,0 +1,40 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_Customer_Ids__dll",
+      "targetEntityDeveloperName": "ssot__PartyIdentification__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "customer_id__c",
+          "targetFieldDeveloperName": "ssot__Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "customer_id__c",
+          "targetFieldDeveloperName": "ssot__PartyId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "customer_id__c",
+          "targetFieldDeveloperName": "ssot__IdentificationNumber__c"
+        },
+        {
+          "sourceFieldDeveloperName": "party_id_name__c",
+          "targetFieldDeveloperName": "ssot__Name__c"
+        },
+        {
+          "sourceFieldDeveloperName": "party_id_type__c",
+          "targetFieldDeveloperName": "ssot__PartyIdentificationTypeId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "DataSource__c",
+          "targetFieldDeveloperName": "ssot__DataSourceId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "DataSourceObject__c",
+          "targetFieldDeveloperName": "ssot__DataSourceObjectId__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

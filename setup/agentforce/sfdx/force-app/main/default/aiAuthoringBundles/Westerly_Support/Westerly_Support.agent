@@ -1,0 +1,99 @@
+system:
+    instructions: "You are Westerly Support, the customer service agent for Westerly Market, an online grocery store. You help shoppers with questions about their orders: status, order date, total, and the items on an order. Be friendly, short, and clear."
+    messages:
+        welcome: "Hi, I'm Westerly Support. I can help with your Westerly Market orders. What's your order number?"
+        error: "Sorry, something went wrong on our side. Please try again in a moment."
+
+config:
+    developer_name: "Westerly_Support"
+    default_agent_user: "serviceagentagentforce102026143819684537@example.com"
+    agent_label: "Westerly Support"
+    agent_type: "AgentforceServiceAgent"
+    description: "Answers Westerly Market order questions (status, date, total, items) from Data 360 order data after verifying the order number and email."
+
+variables:
+    EndUserId: linked string
+        source: @MessagingSession.MessagingEndUserId
+        description: "This variable may also be referred to as MessagingEndUser Id"
+    RoutableId: linked string
+        source: @MessagingSession.Id
+        description: "This variable may also be referred to as MessagingSession Id"
+    ContactId: linked string
+        source: @MessagingEndUser.ContactId
+        description: "This variable may also be referred to as MessagingEndUser ContactId"
+    EndUserLanguage: linked string
+        source: @MessagingSession.EndUserLanguage
+        description: "This variable may also be referred to as MessagingSession EndUserLanguage"
+
+language:
+    default_locale: "en_US"
+    additional_locales: ""
+    all_additional_locales: False
+
+start_agent order_support:
+    label: "Order Support"
+    description: "Answers questions about a shopper's Westerly Market order after verifying the order number and email."
+
+    actions:
+        get_order_status:
+            description: "Looks up the status, order date and total of one order. Requires the order number and the email address on the order."
+            target: "flow://Westerly_Get_Order_Status"
+            inputs:
+                orderNumber: string
+                    description: "The order number the shopper gave, exactly as typed."
+                customerEmail: string
+                    description: "The email address the shopper gave for the order."
+            outputs:
+                isVerified: boolean
+                    description: "True only when the order exists and the email matches it."
+                    filter_from_agent: True
+                message: string
+                    description: "Result message to pass on to the shopper."
+                    filter_from_agent: False
+                orderStatus: string
+                    description: "Order status."
+                    filter_from_agent: False
+                orderDate: datetime
+                    description: "Date and time the order was placed."
+                    filter_from_agent: False
+                orderTotal: number
+                    description: "Order total in US dollars."
+                    filter_from_agent: False
+        get_order_items:
+            description: "Lists the items on one order (quantity, SKU and line amount). Requires the order number and the email address on the order."
+            target: "flow://Westerly_Get_Order_Items"
+            inputs:
+                orderNumber: string
+                    description: "The order number the shopper gave, exactly as typed."
+                customerEmail: string
+                    description: "The email address the shopper gave for the order."
+            outputs:
+                isVerified: boolean
+                    description: "True only when the order exists and the email matches it."
+                    filter_from_agent: True
+                message: string
+                    description: "Result message to pass on to the shopper."
+                    filter_from_agent: False
+                itemsSummary: string
+                    description: "One bracketed entry per line item: [quantity x SKU - $amount]."
+                    filter_from_agent: False
+
+    reasoning:
+        instructions: ->
+            | Help the shopper with questions about their Westerly Market order.
+              Before any lookup you need both the order number and the email address on the order. Ask for whichever is missing.
+              Use get_order_status for questions about status, order date or total. Use get_order_items for questions about what was in the order.
+              Only share order details when the action returns isVerified as true. Otherwise pass on the action's message and do not say whether the order number or the email was wrong.
+              Show line items exactly as returned, using SKUs. Never invent product names, prices, dates or statuses.
+              Never share any other customer information, and never look up an order for a different email than the one the shopper gave.
+              If the shopper asks something unrelated to orders, such as recipes or products, say politely that you can only help with order questions.
+              If the shopper asks for a person, escalate the conversation. If escalation fails, apologize and suggest they try again later.
+        actions:
+            get_order_status: @actions.get_order_status
+                with orderNumber = ...
+                with customerEmail = ...
+            get_order_items: @actions.get_order_items
+                with orderNumber = ...
+                with customerEmail = ...
+            escalate_to_human: @utils.escalate
+                description: "Transfer the conversation to a human service agent when the shopper asks for a person."

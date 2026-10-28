@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AiAgentDefinitionVersion xmlns="http://soap.sforce.com/2006/04/metadata">
+    <articleAnswersGPTEnabled>false</articleAnswersGPTEnabled>
+    <billingMode>ActionBased</billingMode>
+    <citationsEnabled>false</citationsEnabled>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The agent instructions</description>
+        <developerName>AgentScriptInternal_agent_instructions</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Agent Instructions</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <conversationVariables>
+        <dataType>Text</dataType>
+        <description>The next topic to be visited</description>
+        <developerName>AgentScriptInternal_next_topic</developerName>
+        <includeInPrompt>false</includeInPrompt>
+        <label>Next Topic</label>
+        <visibility>Internal</visibility>
+    </conversationVariables>
+    <copilotPrimaryLanguage>en_US</copilotPrimaryLanguage>
+    <genAiPlannerName>Westerly_Support_v1</genAiPlannerName>
+    <isScriptCompatibleAgent>true</isScriptCompatibleAgent>
+    <knowledgeActionEnabled>false</knowledgeActionEnabled>
+    <knowledgeFallbackEnabled>false</knowledgeFallbackEnabled>
+    <planner>
+        <fullName>Westerly_Support_v1</fullName>
+        <agentGraphRef>20ZjV000002a89C</agentGraphRef>
+        <description>Answers Westerly Market order questions (status, date, total, items) from Data 360 order data after verifying the order number and email.</description>
+        <localTopicLinks>
+            <genAiPluginName>order_support</genAiPluginName>
+        </localTopicLinks>
+        <localTopics>
+            <canEscalate>false</canEscalate>
+            <description>Answers questions about a shopper&apos;s Westerly Market order after verifying the order number and email.</description>
+            <genAiPluginInstructions>
+                <description>You are Westerly Support, the customer service agent for Westerly Market, an online grocery store. You help shoppers with questions about their orders: status, order date, total, and the items on an order. Be friendly, short, and clear.</description>
+                <developerName>instruction0_179jV000000kCfh</developerName>
+                <language>en_US</language>
+                <masterLabel>instruction0_179jV000000kCfh</masterLabel>
+                <sortOrder>1</sortOrder>
+            </genAiPluginInstructions>
+            <language>en_US</language>
+            <localActionLinks>
+                <functionName>get_order_items</functionName>
+            </localActionLinks>
+            <localActionLinks>
+                <functionName>get_order_status</functionName>
+            </localActionLinks>
+            <localActions>
+                <description>Lists the items on one order (quantity, SKU and line amount). Requires the order number and the email address on the order.</description>
+                <invocationTarget>Westerly_Get_Order_Items</invocationTarget>
+                <invocationTargetType>flow</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>get_order_items</localDeveloperName>
+                <masterLabel>Get Order Items</masterLabel>
+            </localActions>
+            <localActions>
+                <description>Looks up the status, order date and total of one order. Requires the order number and the email address on the order.</description>
+                <invocationTarget>Westerly_Get_Order_Status</invocationTarget>
+                <invocationTargetType>flow</invocationTargetType>
+                <isConfirmationRequired>false</isConfirmationRequired>
+                <isIncludeInProgressIndicator>false</isIncludeInProgressIndicator>
+                <localDeveloperName>get_order_status</localDeveloperName>
+                <masterLabel>Get Order Status</masterLabel>
+            </localActions>
+            <localDeveloperName>order_support</localDeveloperName>
+            <masterLabel>Order Support</masterLabel>
+            <pluginType>Topic</pluginType>
+        </localTopics>
+        <masterLabel>Westerly Support</masterLabel>
+        <plannerType>Atlas__ConcurrentMultiAgentOrchestration</plannerType>
+    </planner>
+    <smallTalkEnabled>false</smallTalkEnabled>
+    <staticPromptsEnabled>false</staticPromptsEnabled>
+    <status>Inactive</status>
+    <stopRecPrompts>false</stopRecPrompts>
+    <surfacesEnabled>false</surfacesEnabled>
+    <toneType>Casual</toneType>
+    <version>1</version>
+    <welcomeMessage>Hi, I&apos;m Westerly Support. I can help with your Westerly Market orders. What&apos;s your order number?</welcomeMessage>
+</AiAgentDefinitionVersion>

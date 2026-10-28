@@ -1,0 +1,44 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_Orders__dll",
+      "targetEntityDeveloperName": "ssot__SalesOrder__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "order_id__c",
+          "targetFieldDeveloperName": "ssot__Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "customer_id__c",
+          "targetFieldDeveloperName": "ssot__SoldToCustomerId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "store_id__c",
+          "targetFieldDeveloperName": "ssot__SalesStoreId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "order_date__c",
+          "targetFieldDeveloperName": "ssot__OrderStartDate__c"
+        },
+        {
+          "sourceFieldDeveloperName": "order_status__c",
+          "targetFieldDeveloperName": "ssot__SalesOrderStatusId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "channel__c",
+          "targetFieldDeveloperName": "ssot__SalesChannelId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "order_total__c",
+          "targetFieldDeveloperName": "ssot__GrandTotalAmount__c"
+        },
+        {
+          "sourceFieldDeveloperName": "last_modified__c",
+          "targetFieldDeveloperName": "ssot__LastModifiedDate__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

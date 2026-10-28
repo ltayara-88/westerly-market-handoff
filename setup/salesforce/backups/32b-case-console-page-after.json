@@ -1,0 +1,1159 @@
+{
+  "description": null,
+  "events": [],
+  "flexiPageRegions": [
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "westerlyCaseShopper",
+            "identifier": "westerlyCaseShopper"
+          }
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "backgroundHexColor",
+                "type": null,
+                "value": "#0070d2",
+                "valueList": null
+              },
+              {
+                "name": "backgroundImageUrl",
+                "type": null,
+                "value": "/resource/SDO_Service_TrailheadSunBG",
+                "valueList": null
+              },
+              {
+                "name": "hideChurn",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "hideCust360Id",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "hideMetrics",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "hideViewCustomer",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "iconColor",
+                "type": null,
+                "value": "#0070d2",
+                "valueList": null
+              },
+              {
+                "name": "metric1Icon",
+                "type": null,
+                "value": "standard:reward",
+                "valueList": null
+              },
+              {
+                "name": "metric1IconSize",
+                "type": null,
+                "value": "large",
+                "valueList": null
+              },
+              {
+                "name": "metric1Label",
+                "type": null,
+                "value": "Loyalty Status",
+                "valueList": null
+              },
+              {
+                "name": "metric2Icon",
+                "type": null,
+                "value": "custom:custom93",
+                "valueList": null
+              },
+              {
+                "name": "metric2IconSize",
+                "type": null,
+                "value": "large",
+                "valueList": null
+              },
+              {
+                "name": "metric2Label",
+                "type": null,
+                "value": "Lifetime Value",
+                "valueList": null
+              },
+              {
+                "name": "pullMargin",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "reverseColor",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "threshold1",
+                "type": null,
+                "value": "20",
+                "valueList": null
+              },
+              {
+                "name": "threshold1Label",
+                "type": null,
+                "value": "This customer is highly active and engaged with your brand. Low risk for attrition.",
+                "valueList": null
+              },
+              {
+                "name": "threshold2",
+                "type": null,
+                "value": "50",
+                "valueList": null
+              },
+              {
+                "name": "threshold2Label",
+                "type": null,
+                "value": "This customer is less active or engaged with your brand. Some risk for attrition.",
+                "valueList": null
+              },
+              {
+                "name": "threshold3Label",
+                "type": null,
+                "value": "This customer is not active or engaged with your brand. Likely risk of attrition.",
+                "valueList": null
+              },
+              {
+                "name": "thresholdTitle",
+                "type": null,
+                "value": "Predicted Churn Risk:",
+                "valueList": null
+              }
+            ],
+            "componentName": "c:SDO_Service_Customer360_MutipleObjects",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "c_SDO_Service_Customer360_MutipleObjects",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "createQuickActionName",
+                "type": null,
+                "value": "SDO_Service_New_Case",
+                "valueList": null
+              },
+              {
+                "name": "lookupFieldName",
+                "type": null,
+                "value": "Id",
+                "valueList": null
+              },
+              {
+                "name": "titleFieldName",
+                "type": null,
+                "value": "Close Detail",
+                "valueList": null
+              },
+              {
+                "name": "updateQuickActionName",
+                "type": null,
+                "value": "Case.SDO_Service_Close_Detail_for_Console",
+                "valueList": null
+              }
+            ],
+            "componentName": "console:relatedRecord",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "console_relatedRecord2",
+            "visibilityRule": {
+              "booleanFilter": null,
+              "criteria": [
+                {
+                  "leftValue": "{!Record.Status}",
+                  "operator": "EQUAL",
+                  "rightValue": "Closed"
+                }
+              ]
+            }
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "createQuickActionName",
+                "type": null,
+                "value": "SDO_New_Contact",
+                "valueList": null
+              },
+              {
+                "name": "lookupFieldName",
+                "type": null,
+                "value": "Case.ContactId",
+                "valueList": null
+              },
+              {
+                "name": "titleFieldName",
+                "type": null,
+                "value": null,
+                "valueList": null
+              },
+              {
+                "name": "updateQuickActionName",
+                "type": null,
+                "value": "Contact.SDO_Service_Contact_Details_Console",
+                "valueList": null
+              }
+            ],
+            "componentName": "console:relatedRecord",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "console_relatedRecord",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "createQuickActionName",
+                "type": null,
+                "value": "SDO_New_Account",
+                "valueList": null
+              },
+              {
+                "name": "lookupFieldName",
+                "type": null,
+                "value": "AccountId",
+                "valueList": null
+              },
+              {
+                "name": "updateQuickActionName",
+                "type": null,
+                "value": "Account.SDO_Service_UpdateAccount",
+                "valueList": null
+              }
+            ],
+            "componentName": "console:relatedRecord",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "console_relatedRecord4",
+            "visibilityRule": {
+              "booleanFilter": null,
+              "criteria": [
+                {
+                  "leftValue": "{!Record.Account.IsPersonAccount}",
+                  "operator": "EQUAL",
+                  "rightValue": "false"
+                }
+              ]
+            }
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "left",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "forceChatter:recordFeedContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "forceChatter_recordFeedContainer",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-bhleawath8",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "force:detailPanel",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_detailPanel",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-4b5a0d9c-37fa-469d-b4b4-4e55716cfa27",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "relatedListComponentOverride",
+                "type": null,
+                "value": "NONE",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:relatedListContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_relatedListContainer",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-f121c3d1-2af3-464a-9946-329a00324d0d",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "runtime_service_swarming:swarmConversation",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_service_swarming_swarmConversation",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-bd57e0b3-9426-41d3-a779-9b8a4403ab47",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "active",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "body",
+                "type": null,
+                "value": "Facet-bhleawath8",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Standard.Tab.feed",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "feedTab",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "body",
+                "type": null,
+                "value": "Facet-4b5a0d9c-37fa-469d-b4b4-4e55716cfa27",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Standard.Tab.detail",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "detailTab",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "active",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "body",
+                "type": null,
+                "value": "Facet-f121c3d1-2af3-464a-9946-329a00324d0d",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Standard.Tab.relatedLists",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "relatedListsTab",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "body",
+                "type": null,
+                "value": "Facet-bd57e0b3-9426-41d3-a779-9b8a4403ab47",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Slack",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "flexipage_tab",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-5e389994-a683-4ead-996c-40e2af7bb02f",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "actionNames",
+                "type": null,
+                "value": null,
+                "valueList": {
+                  "valueListItems": [
+                    {
+                      "value": "Case.SDO_Service_Create_Article",
+                      "visibilityRule": {
+                        "booleanFilter": null,
+                        "criteria": [
+                          {
+                            "leftValue": "{!Record.Status}",
+                            "operator": "EQUAL",
+                            "rightValue": "Closed"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "value": "Case.SDO_Service_Escalate_Case",
+                      "visibilityRule": {
+                        "booleanFilter": "1 AND 2",
+                        "criteria": [
+                          {
+                            "leftValue": "{!Record.Status}",
+                            "operator": "NE",
+                            "rightValue": "Escalated"
+                          },
+                          {
+                            "leftValue": "{!Record.Status}",
+                            "operator": "NE",
+                            "rightValue": "Closed"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "value": "Edit",
+                      "visibilityRule": null
+                    },
+                    {
+                      "value": "OmniChannelRouteWork",
+                      "visibilityRule": null
+                    },
+                    {
+                      "value": "Case.SDO_Service_Close_Case",
+                      "visibilityRule": null
+                    },
+                    {
+                      "value": "Delete",
+                      "visibilityRule": null
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "collapsed",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "enableActionsConfiguration",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "enableActionsInNative",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "hideChatterActions",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "numVisibleActions",
+                "type": null,
+                "value": "3",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:highlightsPanel",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_highlightsPanel",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "hideUpdateButton",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "variant",
+                "type": null,
+                "value": "linear",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_sales_pathassistant:pathAssistant",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_sales_pathassistant_pathAssistant",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "configuration",
+                "type": null,
+                "value": "DEPLOYMENT",
+                "valueList": null
+              },
+              {
+                "name": "deploymentId",
+                "type": null,
+                "value": "SDO_Service_Case",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": null,
+                "valueList": null
+              }
+            ],
+            "componentName": "industries_service_excellence:actionLauncher",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "industries_service_excellence_actionLauncher",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "tabs",
+                "type": null,
+                "value": "Facet-5e389994-a683-4ead-996c-40e2af7bb02f",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tabset",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "flexipage_tabset",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "objectField",
+                "type": null,
+                "value": "Subject",
+                "valueList": null
+              },
+              {
+                "name": "useContact",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              }
+            ],
+            "componentName": "c:SDO_Service_ChangeTabLabel",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "SDO_Service_ChangeTabLabel",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "middle",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "hideMarkCompleteButton",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              }
+            ],
+            "componentName": "support:milestones",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "support_milestones",
+            "visibilityRule": {
+              "booleanFilter": null,
+              "criteria": [
+                {
+                  "leftValue": "{!Record.Entitlement.Name}",
+                  "operator": "NE",
+                  "rightValue": null
+                }
+              ]
+            }
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "hideEinstein",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "hideWhenEmpty",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "launchOption",
+                "type": null,
+                "value": "launchModal",
+                "valueList": null
+              },
+              {
+                "name": "maxDisplayPropositions",
+                "type": null,
+                "value": "1",
+                "valueList": null
+              },
+              {
+                "name": "recommendationSource",
+                "type": null,
+                "value": "strategyBuilder",
+                "valueList": null
+              },
+              {
+                "name": "shouldLaunchActionOnReject",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "showDescription",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "showImage",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "showRejectAction",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "showTitle",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "strategyName",
+                "type": null,
+                "value": "SDO_Service_Conversation_Helper_Strategy_Case",
+                "valueList": null
+              },
+              {
+                "name": "widgetTitle",
+                "type": null,
+                "value": "Next Best Action",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_communities_nba:builderNbaWidget",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_communities_nba_builderNbaWidget",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "parentFieldApiName",
+                "type": null,
+                "value": "Case.Id",
+                "valueList": null
+              },
+              {
+                "name": "relatedListApiName",
+                "type": null,
+                "value": "SurveySubjectEntities",
+                "valueList": null
+              },
+              {
+                "name": "relatedListComponentOverride",
+                "type": null,
+                "value": "NONE",
+                "valueList": null
+              },
+              {
+                "name": "rowsToDisplay",
+                "type": null,
+                "value": "10",
+                "valueList": null
+              },
+              {
+                "name": "showActionBar",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:relatedListSingleContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_relatedListSingleContainer4",
+            "visibilityRule": {
+              "booleanFilter": null,
+              "criteria": [
+                {
+                  "leftValue": "{!Record.SDO_Service_Surveys_CSAT_Score__c}",
+                  "operator": "GT",
+                  "rightValue": "0"
+                }
+              ]
+            }
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "maxEARContainerHeight",
+                "type": null,
+                "value": "500",
+                "valueList": null
+              },
+              {
+                "name": "shouldDisplayFiltersOnRight",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              }
+            ],
+            "componentName": "forceKnowledge:articleSearchDesktop",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "forceKnowledge_articleSearchDesktop",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "runtime_service_scs:conversations",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_service_scs_conversations",
+            "visibilityRule": {
+              "booleanFilter": "1 OR 2 OR 3 OR 4",
+              "criteria": [
+                {
+                  "leftValue": "{!Record.Origin}",
+                  "operator": "EQUAL",
+                  "rightValue": "Facebook"
+                },
+                {
+                  "leftValue": "{!Record.Origin}",
+                  "operator": "EQUAL",
+                  "rightValue": "Twitter"
+                },
+                {
+                  "leftValue": "{!Record.Origin}",
+                  "operator": "EQUAL",
+                  "rightValue": "Instagram"
+                },
+                {
+                  "leftValue": "{!Record.Origin}",
+                  "operator": "EQUAL",
+                  "rightValue": "LinkedIn"
+                }
+              ]
+            }
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-75443f11-55ba-4f94-9f0c-5ef8b5073f2e",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "parentFieldApiName",
+                "type": null,
+                "value": "Case.Id",
+                "valueList": null
+              },
+              {
+                "name": "relatedListApiName",
+                "type": null,
+                "value": "Histories",
+                "valueList": null
+              },
+              {
+                "name": "relatedListComponentOverride",
+                "type": null,
+                "value": "NONE",
+                "valueList": null
+              },
+              {
+                "name": "rowsToDisplay",
+                "type": null,
+                "value": "10",
+                "valueList": null
+              },
+              {
+                "name": "showActionBar",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:relatedListSingleContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_relatedListSingleContainer5",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "parentFieldApiName",
+                "type": null,
+                "value": "Case.ContactId",
+                "valueList": null
+              },
+              {
+                "name": "relatedListApiName",
+                "type": null,
+                "value": "Cases",
+                "valueList": null
+              },
+              {
+                "name": "relatedListComponentOverride",
+                "type": null,
+                "value": "NONE",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:relatedListSingleContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_relatedListSingleContainer",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-6fe37196-0d34-41c5-9222-009f923b5a53",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "console:lastViewedInCommunity",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "console_lastViewedInCommunity",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-6dba9674-b714-499a-8176-dfa41eea44ef",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "active",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "body",
+                "type": null,
+                "value": "Facet-75443f11-55ba-4f94-9f0c-5ef8b5073f2e",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Case Tools",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "customTab",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "body",
+                "type": null,
+                "value": "Facet-6fe37196-0d34-41c5-9222-009f923b5a53",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Case History",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "flexipage_tab2",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "body",
+                "type": null,
+                "value": "Facet-6dba9674-b714-499a-8176-dfa41eea44ef",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Insights",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "customTab3",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-28ccdcbe-c664-4ece-9477-688aa57343fc",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "tabs",
+                "type": null,
+                "value": "Facet-28ccdcbe-c664-4ece-9477-688aa57343fc",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tabset",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "flexipage_tabset2",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "right",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    }
+  ],
+  "masterLabel": "Case - Service Console - Custom Collapsible",
+  "parentFlexiPage": null,
+  "platformActionlist": null,
+  "quickActionList": null,
+  "sobjectType": "Case",
+  "template": {
+    "componentType": null,
+    "flexipageDataSources": null,
+    "identifier": null,
+    "name": "c:SDO_Service_LRP_ThreeColumnFoldableLightningLayout",
+    "properties": [],
+    "schemaProperties": []
+  },
+  "type": "RecordPage",
+  "urls": null
+}

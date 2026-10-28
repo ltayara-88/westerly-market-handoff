@@ -1,0 +1,16 @@
+{
+  "toolName": "d360_ci_create",
+  "params": {
+    "input": {
+      "apiName": "Westerly_Shopper_Metrics__cio",
+      "displayName": "Westerly Shopper Metrics",
+      "description": "Per unified Westerly customer: orders in last 30 days, total orders, average cart value, and Top Shopper flag (more than 5 orders all-time)",
+      "definitionType": "CalculatedMetric",
+      "dataSpaceName": "default",
+      "publishScheduleInterval": "TwentyFour",
+      "publishScheduleStartDateTime": "2026-10-22T08:00",
+      "publishScheduleTimeZone": "UTC",
+      "expression": "SELECT UnifiedLinkssotIndividualWstr__dlm.UnifiedRecordId__c AS customer_id__c, SUM(CASE WHEN DATEDIFF(CURRENT_DATE(), ssot__SalesOrder__dlm.ssot__OrderStartDate__c) <= 30 THEN 1 ELSE 0 END) AS orders_last_30_days__c, COUNT(ssot__SalesOrder__dlm.ssot__Id__c) AS total_orders__c, AVG(ssot__SalesOrder__dlm.ssot__GrandTotalAmount__c) AS avg_cart_value__c, CASE WHEN COUNT(ssot__SalesOrder__dlm.ssot__Id__c) > 5 THEN 1 ELSE 0 END AS is_top_shopper__c FROM ssot__SalesOrder__dlm INNER JOIN UnifiedLinkssotIndividualWstr__dlm ON ssot__SalesOrder__dlm.ssot__SoldToCustomerId__c = UnifiedLinkssotIndividualWstr__dlm.SourceRecordId__c GROUP BY UnifiedLinkssotIndividualWstr__dlm.UnifiedRecordId__c"
+    }
+  }
+}

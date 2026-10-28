@@ -1,0 +1,523 @@
+{
+  "description": "What: Case Org wide default Record Page.",
+  "events": [],
+  "flexiPageRegions": [
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "hideMarkCompleteButton",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              }
+            ],
+            "componentName": "support:milestones",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "support_milestones",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "console:lastViewedInCommunity",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "console_lastViewedInCommunity",
+            "visibilityRule": {
+              "booleanFilter": null,
+              "criteria": [
+                {
+                  "leftValue": "{!Record.Origin}",
+                  "operator": "EQUAL",
+                  "rightValue": "Community"
+                }
+              ]
+            }
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "forceKnowledge:articleSearchDesktop",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "forceKnowledge_articleSearchDesktop",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "facet-ab005b4b-1cc1-4f26-8c77-01e6738638d0",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "collapsed",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "enableActionsConfiguration",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "hideChatterActions",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "numVisibleActions",
+                "type": null,
+                "value": "3",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:highlightsPanel",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_highlightsPanel",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "hideUpdateButton",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "variant",
+                "type": null,
+                "value": "linear",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_sales_pathassistant:pathAssistant",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_sales_pathassistant_pathAssistant",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "header",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "parentFieldApiName",
+                "type": null,
+                "value": "Case.Id",
+                "valueList": null
+              },
+              {
+                "name": "relatedListApiName",
+                "type": null,
+                "value": "CaseArticles",
+                "valueList": null
+              },
+              {
+                "name": "relatedListComponentOverride",
+                "type": null,
+                "value": "NONE",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:relatedListSingleContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_relatedListSingleContainer",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "parentFieldApiName",
+                "type": null,
+                "value": "Case.Id",
+                "valueList": null
+              },
+              {
+                "name": "relatedListApiName",
+                "type": null,
+                "value": "Histories",
+                "valueList": null
+              },
+              {
+                "name": "relatedListComponentOverride",
+                "type": null,
+                "value": "NONE",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:relatedListSingleContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_relatedListSingleContainer2",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "parentFieldApiName",
+                "type": null,
+                "value": "Case.Id",
+                "valueList": null
+              },
+              {
+                "name": "relatedListApiName",
+                "type": null,
+                "value": "LiveChatTranscripts",
+                "valueList": null
+              },
+              {
+                "name": "relatedListComponentOverride",
+                "type": null,
+                "value": "NONE",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:relatedListSingleContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_relatedListSingleContainer3",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "parentFieldApiName",
+                "type": null,
+                "value": "Case.Id",
+                "valueList": null
+              },
+              {
+                "name": "relatedListApiName",
+                "type": null,
+                "value": "AttachedContentDocuments",
+                "valueList": null
+              },
+              {
+                "name": "relatedListComponentOverride",
+                "type": null,
+                "value": "NONE",
+                "valueList": null
+              }
+            ],
+            "componentName": "force:relatedListSingleContainer",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_relatedListSingleContainer4",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "facet-4fc690aa-2be4-48b2-ac1d-985b02452224",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "active",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "body",
+                "type": null,
+                "value": "facet-c3658d8c-79f5-4c66-bed0-c7467037f9c9",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Standard.Tab.detail",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "detailTab",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "body",
+                "type": null,
+                "value": "facet-4fc690aa-2be4-48b2-ac1d-985b02452224",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Standard.Tab.relatedLists",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "relatedListsTab",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "facet-883613fe-3f13-417a-8c07-0240b92ac91a",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "tabs",
+                "type": null,
+                "value": "facet-883613fe-3f13-417a-8c07-0240b92ac91a",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tabset",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "flexipage_tabset",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "main",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "active",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "body",
+                "type": null,
+                "value": "facet-ab005b4b-1cc1-4f26-8c77-01e6738638d0",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Case Tools",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "customTab",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "active",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "body",
+                "type": null,
+                "value": "Facet-ymomcuhtab",
+                "valueList": null
+              },
+              {
+                "name": "title",
+                "type": null,
+                "value": "Einstein",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tab",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "customTab2",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-b6lr5d7ay7l",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "tabs",
+                "type": null,
+                "value": "Facet-b6lr5d7ay7l",
+                "valueList": null
+              }
+            ],
+            "componentName": "flexipage:tabset",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "flexipage_tabset2",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "sidebar",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "force:detailPanel",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "force_detailPanel",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "facet-c3658d8c-79f5-4c66-bed0-c7467037f9c9",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "c:SDO_Service_CaseSentiment_Content",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "CaseSentiment_Content",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [],
+            "componentName": "c:SDO_Service_Discovery_Case",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "ED_Case",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "Facet-ymomcuhtab",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Facet"
+    }
+  ],
+  "masterLabel": "Case - Default",
+  "parentFlexiPage": null,
+  "platformActionlist": null,
+  "quickActionList": null,
+  "sobjectType": "Case",
+  "template": {
+    "componentType": null,
+    "flexipageDataSources": null,
+    "identifier": null,
+    "name": "flexipage:recordHomeTemplateDesktop",
+    "properties": [],
+    "schemaProperties": []
+  },
+  "type": "RecordPage",
+  "urls": null
+}

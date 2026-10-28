@@ -1,0 +1,44 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_Customer_Contacts__dll",
+      "targetEntityDeveloperName": "ssot__ContactPointAddress__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "customer_id__c",
+          "targetFieldDeveloperName": "ssot__Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "customer_id__c",
+          "targetFieldDeveloperName": "ssot__PartyId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "address_line1__c",
+          "targetFieldDeveloperName": "ssot__AddressLine1__c"
+        },
+        {
+          "sourceFieldDeveloperName": "city__c",
+          "targetFieldDeveloperName": "ssot__CityName__c"
+        },
+        {
+          "sourceFieldDeveloperName": "state_province__c",
+          "targetFieldDeveloperName": "ssot__StateProvinceName__c"
+        },
+        {
+          "sourceFieldDeveloperName": "postal_code__c",
+          "targetFieldDeveloperName": "ssot__PostalCodeText__c"
+        },
+        {
+          "sourceFieldDeveloperName": "country__c",
+          "targetFieldDeveloperName": "ssot__CountryName__c"
+        },
+        {
+          "sourceFieldDeveloperName": "last_modified__c",
+          "targetFieldDeveloperName": "ssot__LastModifiedDate__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

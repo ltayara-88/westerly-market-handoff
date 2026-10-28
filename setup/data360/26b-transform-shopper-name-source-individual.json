@@ -1,0 +1,67 @@
+{
+  "dataTransformNameOrId": "Westerly_Shopper_Name_Transform",
+  "dataTransformObject": {
+    "name": "Westerly_Shopper_Name_Transform",
+    "label": "Westerly Shopper Name Transform",
+    "description": "Daily batch copy of first/last name from the source Individual into Westerly_Shopper_Name__dll (mapped to Westerly_Shopper_Name__dlm), linked through the unified link bridge, for the profile page name card",
+    "type": "BATCH",
+    "dataSpaceName": "default",
+    "definition": {
+      "type": "DCSQL",
+      "version": "67.0",
+      "name": "Westerly_Shopper_Name_Transform",
+      "label": "Westerly Shopper Name Transform",
+      "outputDataObjects": [
+        {
+          "name": "Westerly_Shopper_Name__dll",
+          "label": "Shopper Name",
+          "category": "Other",
+          "type": "dataLakeObject",
+          "dataspaceName": "default",
+          "fields": [
+            {
+              "isPrimaryKey": true,
+              "keyQualifierField": "KQ_Id",
+              "label": "Shopper Name Id",
+              "name": "Id__c",
+              "type": "Text"
+            },
+            {
+              "isPrimaryKey": false,
+              "keyQualifierField": "KQ_PartyId",
+              "label": "Unified Individual",
+              "name": "PartyId__c",
+              "type": "Text"
+            },
+            {
+              "isPrimaryKey": false,
+              "keyQualifierField": "KQ_FirstName",
+              "label": "First Name",
+              "name": "FirstName__c",
+              "type": "Text"
+            },
+            {
+              "isPrimaryKey": false,
+              "keyQualifierField": "KQ_LastName",
+              "label": "Last Name",
+              "name": "LastName__c",
+              "type": "Text"
+            }
+          ]
+        }
+      ],
+      "manifest": {
+        "nodes": {
+          "model.input1": {
+            "compiled_code": "SELECT ssot__Id__c AS Id__c, ssot__Id__c AS PartyId__c, ssot__FirstName__c AS FirstName__c, ssot__LastName__c AS LastName__c FROM ssot__Individual__dlm",
+            "config": {
+              "materialized": "table"
+            },
+            "name": "input1",
+            "relation_name": "Westerly_Shopper_Name__dll"
+          }
+        }
+      }
+    }
+  }
+}

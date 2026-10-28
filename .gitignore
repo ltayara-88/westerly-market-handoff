@@ -1,0 +1,23 @@
+# Secrets: never commit
+.env
+.env.*
+!.env.example
+*.p8
+*.pem
+*.key
+
+# Dependencies and builds
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+
+# Salesforce CLI local state (agent preview sessions and traces)
+.sf/
+.sfdx/
+
+# Editors, OS, local tooling
+.DS_Store
+.claude/
+.vscode/
+*.backup*

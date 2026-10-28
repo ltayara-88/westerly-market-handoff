@@ -1,0 +1,18 @@
+{
+  "toolName": "d360_datastream_create_streaming_app",
+  "params": {
+    "connectionName": "Westerly_site_b0ff9976_a2eb_48df_8ffc_267ca24b4f36",
+    "streamingAppType": "WebApp",
+    "category": "Engagement",
+    "events": [
+      "pageView",
+      "addToCart",
+      "removeFromCart",
+      "orderPlaced",
+      "search",
+      "logout"
+    ],
+    "streamName": "Westerly_Web_Engagement",
+    "label": "Westerly Web Engagement"
+  }
+}

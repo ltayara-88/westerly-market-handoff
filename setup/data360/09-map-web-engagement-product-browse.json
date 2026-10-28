@@ -1,0 +1,84 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_site_Behavioral_Events_A4C5A503__dll",
+      "targetEntityDeveloperName": "ssot__ProductBrowseEngagement__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "eventId__c",
+          "targetFieldDeveloperName": "ssot__Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "dateTime__c",
+          "targetFieldDeveloperName": "ssot__EngagementDateTm__c"
+        },
+        {
+          "sourceFieldDeveloperName": "deviceId__c",
+          "targetFieldDeveloperName": "ssot__IndividualId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "sessionId__c",
+          "targetFieldDeveloperName": "ssot__SessionId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "eventType__c",
+          "targetFieldDeveloperName": "ssot__ProductBrowseEventType__c"
+        },
+        {
+          "sourceFieldDeveloperName": "pageView_page__c",
+          "targetFieldDeveloperName": "ssot__PageName__c"
+        },
+        {
+          "sourceFieldDeveloperName": "pageView_sourceUrl__c",
+          "targetFieldDeveloperName": "ssot__PageURL__c"
+        },
+        {
+          "sourceFieldDeveloperName": "pageView_sourceUrlReferrer__c",
+          "targetFieldDeveloperName": "ssot__ReferrerURL__c"
+        },
+        {
+          "sourceFieldDeveloperName": "addToCart_sku__c",
+          "targetFieldDeveloperName": "ssot__ProductSKU__c"
+        },
+        {
+          "sourceFieldDeveloperName": "addToCart_quantity__c",
+          "targetFieldDeveloperName": "ssot__ProductQuantity__c"
+        },
+        {
+          "sourceFieldDeveloperName": "addToCart_price__c",
+          "targetFieldDeveloperName": "ssot__ProductPriceAmount__c"
+        },
+        {
+          "sourceFieldDeveloperName": "search_query__c",
+          "targetFieldDeveloperName": "ssot__KeywordSearch__c"
+        },
+        {
+          "sourceFieldDeveloperName": "orderPlaced_orderId__c",
+          "targetFieldDeveloperName": "ssot__SalesOrderId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "cdp_sys_BrowserName__c",
+          "targetFieldDeveloperName": "ssot__BrowserName__c"
+        },
+        {
+          "sourceFieldDeveloperName": "cdp_sys_DeviceType__c",
+          "targetFieldDeveloperName": "ssot__DeviceType__c"
+        },
+        {
+          "sourceFieldDeveloperName": "cdp_sys_UserAgent__c",
+          "targetFieldDeveloperName": "ssot__UserAgentText__c"
+        },
+        {
+          "sourceFieldDeveloperName": "DataSource__c",
+          "targetFieldDeveloperName": "ssot__DataSourceId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "DataSourceObject__c",
+          "targetFieldDeveloperName": "ssot__DataSourceObjectId__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

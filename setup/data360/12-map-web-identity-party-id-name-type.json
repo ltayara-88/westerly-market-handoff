@@ -1,0 +1,21 @@
+{
+  "toolName": "d360_dmo_field_mapping_add",
+  "params": {
+    "objectSourceTargetMapDeveloperName": "<Westerly_site_identity_NNN_map_PartyIdentification_NNN>",
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_site_identity_18F26CBE__dll",
+      "targetEntityDeveloperName": "ssot__PartyIdentification__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "party_id_name__c",
+          "targetFieldDeveloperName": "ssot__Name__c"
+        },
+        {
+          "sourceFieldDeveloperName": "party_id_type__c",
+          "targetFieldDeveloperName": "ssot__PartyIdentificationTypeId__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

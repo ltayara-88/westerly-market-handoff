@@ -1,0 +1,39 @@
+{
+  "toolName": "d360_ir_create",
+  "params": {
+    "input": {
+      "label": "Westerly Customer Match",
+      "description": "Westerly customers: email match now; customer ID rule to be added once Snowflake view has party ID columns",
+      "configurationType": "Individual",
+      "rulesetId": "wstr",
+      "dataSpaceName": "default",
+      "doesRunAutomatically": false,
+      "matchRules": {
+        "rules": [
+          {
+            "label": "Email backup",
+            "criteria": {
+              "criteria": [
+                {
+                  "shouldMatchOnBlank": false,
+                  "fieldName": "ssot__EmailAddress__c",
+                  "entityName": "ssot__ContactPointEmail__dlm",
+                  "matchMethodType": "ExactNormalized"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "reconciliationRules": {
+        "rules": [
+          {
+            "entityName": "ssot__Individual__dlm",
+            "ruleType": "LastUpdated",
+            "shouldIgnoreEmptyValue": true
+          }
+        ]
+      }
+    }
+  }
+}

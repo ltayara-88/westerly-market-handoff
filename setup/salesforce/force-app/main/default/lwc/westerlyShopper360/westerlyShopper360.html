@@ -1,0 +1,46 @@
+<template>
+    <lightning-card title="Westerly Shopper 360" icon-name="standard:individual">
+        <div class="slds-p-horizontal_medium">
+            <div class="search" onkeyup={handleKeyUp}>
+                <lightning-input
+                    type="search"
+                    label="Customer ID or name"
+                    placeholder="e.g. CUST_001 or a first or last name"
+                    value={term}
+                    onchange={handleTermChange}
+                    class="search_input"
+                ></lightning-input>
+                <lightning-button label="Search" variant="brand" onclick={handleSearch} disabled={isSearching}></lightning-button>
+            </div>
+            <template lwc:if={errorMessage}>
+                <p class="slds-text-color_error slds-m-top_small">{errorMessage}</p>
+            </template>
+            <template lwc:if={isSearching}>
+                <lightning-spinner alternative-text="Searching" size="small"></lightning-spinner>
+            </template>
+        </div>
+
+        <div class="results slds-p-around_medium">
+            <template lwc:if={hasNoMatches}>
+                <p>No shoppers match that customer ID or name.</p>
+            </template>
+            <template lwc:if={hasMatches}>
+                <ul class="matches" aria-label="Matching shoppers">
+                    <template for:each={visibleMatches} for:item="m">
+                        <li key={m.unifiedId}>
+                            <button type="button" class={m.rowClass} data-id={m.unifiedId} onclick={handleSelect}>
+                                <span class="match_name">{m.label}</span>
+                                <span class="match_id">{m.customerId}</span>
+                            </button>
+                        </li>
+                    </template>
+                </ul>
+            </template>
+            <template lwc:if={selectedId}>
+                <div class="card">
+                    <c-westerly-shopper-card unified-id={selectedId}></c-westerly-shopper-card>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>

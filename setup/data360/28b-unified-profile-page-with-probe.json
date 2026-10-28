@@ -1,0 +1,486 @@
+{
+  "description": null,
+  "events": [],
+  "flexiPageRegions": [
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "bridgeObject",
+                "type": null,
+                "value": "UnifiedLinkssotIndividualWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "dataSpaceObject",
+                "type": null,
+                "value": "default",
+                "valueList": null
+              },
+              {
+                "name": "relatedIcon",
+                "type": null,
+                "value": "Individual",
+                "valueList": null
+              },
+              {
+                "name": "relatedObject",
+                "type": null,
+                "value": "UnifiedssotPartyIdentificationWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "relatedObjectField",
+                "type": null,
+                "value": null,
+                "valueList": {
+                  "valueListItems": [
+                    {
+                      "value": "ssot__IdentificationNumber__c",
+                      "visibilityRule": null
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "unifiedObject",
+                "type": null,
+                "value": "UnifiedssotIndividualWstr__dlm",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_cdp:cdpProfileRelatedRecords",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_cdp_cdpProfileRelatedRecords_name",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "bridgeObject",
+                "type": null,
+                "value": "UnifiedLinkssotIndividualWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "calculatedInsightMeasure",
+                "type": null,
+                "value": "orders_last_30_days__c",
+                "valueList": null
+              },
+              {
+                "name": "calculatedInsightObject",
+                "type": null,
+                "value": "Westerly_Orders_Last_30_Days__cio",
+                "valueList": null
+              },
+              {
+                "name": "dataSpaceObject",
+                "type": null,
+                "value": "default",
+                "valueList": null
+              },
+              {
+                "name": "unifiedObject",
+                "type": null,
+                "value": "UnifiedssotIndividualWstr__dlm",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_cdp:cdpProfileInsights",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_cdp_cdpProfileInsights",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "bridgeObject",
+                "type": null,
+                "value": "UnifiedLinkssotIndividualWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "calculatedInsightMeasure",
+                "type": null,
+                "value": "total_orders__c",
+                "valueList": null
+              },
+              {
+                "name": "calculatedInsightObject",
+                "type": null,
+                "value": "Westerly_Total_Orders__cio",
+                "valueList": null
+              },
+              {
+                "name": "dataSpaceObject",
+                "type": null,
+                "value": "default",
+                "valueList": null
+              },
+              {
+                "name": "measureCurrency",
+                "type": null,
+                "value": "false",
+                "valueList": null
+              },
+              {
+                "name": "unifiedObject",
+                "type": null,
+                "value": "UnifiedssotIndividualWstr__dlm",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_cdp:cdpProfileInsights",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_cdp_cdpProfileInsights2",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "bridgeObject",
+                "type": null,
+                "value": "UnifiedLinkssotIndividualWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "calculatedInsightMeasure",
+                "type": null,
+                "value": "avg_cart_value__c",
+                "valueList": null
+              },
+              {
+                "name": "calculatedInsightObject",
+                "type": null,
+                "value": "Westerly_Avg_Cart_Value__cio",
+                "valueList": null
+              },
+              {
+                "name": "dataSpaceObject",
+                "type": null,
+                "value": "default",
+                "valueList": null
+              },
+              {
+                "name": "measureCurrency",
+                "type": null,
+                "value": "true",
+                "valueList": null
+              },
+              {
+                "name": "unifiedObject",
+                "type": null,
+                "value": "UnifiedssotIndividualWstr__dlm",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_cdp:cdpProfileInsights",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_cdp_cdpProfileInsights3",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "header",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "bridgeObject",
+                "type": null,
+                "value": "UnifiedLinkssotIndividualWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "dataSpaceObject",
+                "type": null,
+                "value": "default",
+                "valueList": null
+              },
+              {
+                "name": "relatedIcon",
+                "type": null,
+                "value": "Email",
+                "valueList": null
+              },
+              {
+                "name": "relatedObject",
+                "type": null,
+                "value": "UnifiedssotContactPointEmailWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "relatedObjectField",
+                "type": null,
+                "value": null,
+                "valueList": {
+                  "valueListItems": [
+                    {
+                      "value": "ssot__EmailAddress__c",
+                      "visibilityRule": null
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "unifiedObject",
+                "type": null,
+                "value": "UnifiedssotIndividualWstr__dlm",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_cdp:cdpProfileRelatedRecords",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_cdp_cdpProfileRelatedRecords",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "bridgeObject",
+                "type": null,
+                "value": "UnifiedLinkssotIndividualWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "dataSpaceObject",
+                "type": null,
+                "value": "default",
+                "valueList": null
+              },
+              {
+                "name": "relatedIcon",
+                "type": null,
+                "value": "Phone",
+                "valueList": null
+              },
+              {
+                "name": "relatedObject",
+                "type": null,
+                "value": "UnifiedssotContactPointPhoneWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "relatedObjectField",
+                "type": null,
+                "value": null,
+                "valueList": {
+                  "valueListItems": [
+                    {
+                      "value": "ssot__TelephoneNumber__c",
+                      "visibilityRule": null
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "unifiedObject",
+                "type": null,
+                "value": "UnifiedssotIndividualWstr__dlm",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_cdp:cdpProfileRelatedRecords",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_cdp_cdpProfileRelatedRecords_2",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "bridgeObject",
+                "type": null,
+                "value": "UnifiedLinkssotIndividualWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "dataSpaceObject",
+                "type": null,
+                "value": "default",
+                "valueList": null
+              },
+              {
+                "name": "relatedIcon",
+                "type": null,
+                "value": "Address",
+                "valueList": null
+              },
+              {
+                "name": "relatedObject",
+                "type": null,
+                "value": "UnifiedssotContactPointAddressWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "relatedObjectField",
+                "type": null,
+                "value": null,
+                "valueList": {
+                  "valueListItems": [
+                    {
+                      "value": "ssot__AddressLine1__c",
+                      "visibilityRule": null
+                    },
+                    {
+                      "value": "ssot__CityName__c",
+                      "visibilityRule": null
+                    },
+                    {
+                      "value": "ssot__StateProvinceName__c",
+                      "visibilityRule": null
+                    },
+                    {
+                      "value": "ssot__PostalCodeText__c",
+                      "visibilityRule": null
+                    },
+                    {
+                      "value": "ssot__CountryName__c",
+                      "visibilityRule": null
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "unifiedObject",
+                "type": null,
+                "value": "UnifiedssotIndividualWstr__dlm",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_cdp:cdpProfileRelatedRecords",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_cdp_cdpProfileRelatedRecords_3",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "main",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    },
+    {
+      "appendable": null,
+      "itemInstances": [
+        {
+          "componentInstance": {
+            "componentInstanceProperties": null,
+            "componentName": "westerlyProfileProbe",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "c_westerlyProfileProbe",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        },
+        {
+          "componentInstance": {
+            "componentInstanceProperties": [
+              {
+                "name": "dataSpaceObject",
+                "type": null,
+                "value": "default",
+                "valueList": null
+              },
+              {
+                "name": "engagementObjects",
+                "type": null,
+                "value": null,
+                "valueList": {
+                  "valueListItems": [
+                    {
+                      "value": "ssot__SalesOrder__dlm",
+                      "visibilityRule": null
+                    }
+                  ]
+                }
+              },
+              {
+                "name": "unifiedLinkedObject",
+                "type": null,
+                "value": "UnifiedLinkssotIndividualWstr__dlm",
+                "valueList": null
+              },
+              {
+                "name": "unifiedObject",
+                "type": null,
+                "value": "UnifiedssotIndividualWstr__dlm",
+                "valueList": null
+              }
+            ],
+            "componentName": "runtime_cdp:cdpProfileEngagements",
+            "componentType": null,
+            "flexipageDataSources": null,
+            "identifier": "runtime_cdp_cdpProfileEngagements",
+            "visibilityRule": null
+          },
+          "fieldInstance": null
+        }
+      ],
+      "mode": null,
+      "name": "sidebar",
+      "prependable": null,
+      "replaceable": null,
+      "type": "Region"
+    }
+  ],
+  "masterLabel": "Westerly Unified Shopper",
+  "parentFlexiPage": null,
+  "platformActionlist": null,
+  "quickActionList": null,
+  "sobjectType": null,
+  "template": {
+    "componentType": null,
+    "flexipageDataSources": null,
+    "identifier": null,
+    "name": "runtime_cdp:cdpRecordHomeTemplateDesktop",
+    "properties": [
+      {
+        "name": "cdpEntityName",
+        "type": null,
+        "value": "UnifiedssotIndividualWstr__dlm",
+        "valueList": null
+      }
+    ],
+    "schemaProperties": []
+  },
+  "type": "CdpRecordPage",
+  "urls": null
+}

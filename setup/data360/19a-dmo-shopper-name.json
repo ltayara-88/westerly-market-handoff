@@ -1,0 +1,15 @@
+{
+ "input": {
+  "name": "Westerly_Shopper_Name",
+  "label": "Shopper Name",
+  "category": "Profile",
+  "dataSpaceName": "default",
+  "description": "First and last name per unified individual, filled daily by Westerly_Shopper_Name_Transform, for the Westerly Unified Shopper profile page.",
+  "fields": [
+   {"name": "Id__c", "label": "Shopper Name Id", "dataType": "Text", "isPrimaryKey": true},
+   {"name": "PartyId__c", "label": "Unified Individual", "dataType": "Text", "isPrimaryKey": false},
+   {"name": "FirstName__c", "label": "First Name", "dataType": "Text", "isPrimaryKey": false},
+   {"name": "LastName__c", "label": "Last Name", "dataType": "Text", "isPrimaryKey": false}
+  ]
+ }
+}

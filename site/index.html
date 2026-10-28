@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Westerly Market — Your Neighborhood Supermarket</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Data 360 Web SDK, from the "Westerly site" Website connection. When it loads, script.js sends
+       real events; otherwise it logs them in the on-page event panel. -->
+  <script src="https://cdn.c360a.salesforce.com/beacon/c360a/<WEB_CONNECTOR_ID>/scripts/c360a.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body id="top">
+
+  <!-- Top Utility Bar -->
+  <div class="utility-bar">
+    <div class="container utility-bar-inner">
+      <span class="utility-hours">Mon–Sat 7am–9pm &middot; Sun 8am–7pm</span>
+      <div class="utility-actions">
+        <a href="tel:+15551234567" class="utility-link">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          (555) 123-4567
+        </a>
+        <span class="utility-user" id="userGreeting" hidden></span>
+        <a href="#" class="utility-link" id="signInLink">Sign In</a>
+        <a href="#" class="utility-link cart-link" id="cartLink">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+          <span class="cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Header -->
+  <header class="main-header">
+    <div class="container header-inner">
+      <a href="#top" class="logo">
+        <svg class="logo-icon" width="36" height="36" viewBox="0 0 36 36" fill="none">
+          <rect width="36" height="36" rx="8" fill="#2D6A4F"/>
+          <text x="18" y="24" text-anchor="middle" font-size="18" font-weight="bold" fill="white">W</text>
+        </svg>
+        <span class="logo-text">WESTERLY<span class="logo-light">MARKET</span></span>
+      </a>
+
+      <nav class="main-nav" id="mainNav">
+        <a href="#fresh-picks" class="nav-link">Fresh Produce</a>
+        <a href="#deli-bakery" class="nav-link">Deli & Bakery</a>
+        <a href="#meat-seafood" class="nav-link">Meat & Seafood</a>
+        <a href="#spices" class="nav-link">Spices</a>
+        <a href="#pantry" class="nav-link">Pantry</a>
+        <a href="#beverages" class="nav-link">Beverages</a>
+        <a href="#weekly-deals" class="nav-link">Weekly Deals</a>
+        <a href="#why-westerly" class="nav-link">About Us</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-btn" aria-label="Search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Search bar (toggled by the search icon) -->
+  <div class="search-bar" id="searchBar" hidden>
+    <div class="container">
+      <input type="search" id="searchInput" placeholder="Search products, e.g. salmon, cumin, sourdough" aria-label="Search products">
+      <div class="product-grid search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <h1 class="hero-heading">Fresh from your<br>neighborhood.</h1>
+      <p class="hero-sub">Locally sourced produce, artisan bakery, and everyday essentials — all in one stop.</p>
+      <a href="#weekly-deals" class="btn btn-primary">SHOP THIS WEEK'S DEALS &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Category Grid -->
+  <section class="categories">
+    <div class="container">
+      <h2 class="section-heading">What are you looking for?</h2>
+      <div class="category-grid">
+        <a href="#fresh-picks" class="category-card">
+          <div class="category-icon">🥬</div>
+          <span class="category-label">Fresh Produce</span>
+        </a>
+        <a href="#deli-bakery" class="category-card">
+          <div class="category-icon">🥖</div>
+          <span class="category-label">Deli & Bakery</span>
+        </a>
+        <a href="#meat-seafood" class="category-card">
+          <div class="category-icon">🥩</div>
+          <span class="category-label">Meat & Seafood</span>
+        </a>
+        <a href="#spices" class="category-card">
+          <div class="category-icon">🌶️</div>
+          <span class="category-label">Spices</span>
+        </a>
+        <a href="#pantry" class="category-card">
+          <div class="category-icon">🫙</div>
+          <span class="category-label">Pantry Staples</span>
+        </a>
+        <a href="#beverages" class="category-card">
+          <div class="category-icon">🧃</div>
+          <span class="category-label">Beverages</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fresh Produce -->
+  <section class="fresh-picks" id="fresh-picks">
+    <div class="container">
+      <span class="section-label">FRESH PRODUCE</span>
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-heading">This week's best.<br>Hand-picked for you.</h2>
+          <p class="section-sub">Seasonal favorites from our produce aisle, picked at peak freshness.</p>
+        </div>
+        <a href="#weekly-deals" class="btn btn-outline">SEE PRODUCE DEALS &rarr;</a>
+      </div>
+      <div class="product-grid" data-grid="produce"></div>
+    </div>
+  </section>
+
+  <!-- Deli & Bakery -->
+  <section class="deli-bakery" id="deli-bakery">
+    <div class="deli-bakery-bg"></div>
+    <div class="container deli-bakery-content">
+      <span class="section-label section-label-light">DELI & BAKERY</span>
+      <h2 class="section-heading section-heading-light">Baked fresh daily.<br><strong>Made with love.</strong></h2>
+      <p class="section-sub section-sub-light">Artisan sourdough, flaky croissants, house-roasted deli meats, and prepared meals ready for your table tonight.</p>
+      <div class="product-grid" data-grid="deli"></div>
+    </div>
+  </section>
+
+  <!-- Meat & Seafood -->
+  <section class="meat-seafood" id="meat-seafood">
+    <div class="container">
+      <span class="section-label">MEAT & SEAFOOD</span>
+      <h2 class="section-heading">From our butcher counter.</h2>
+      <p class="section-sub">Locally raised poultry and beef, plus sustainably caught seafood.</p>
+      <div class="product-grid" data-grid="meat"></div>
+    </div>
+  </section>
+
+  <!-- Spices -->
+  <section class="spices" id="spices">
+    <div class="container">
+      <span class="section-label">SPICES</span>
+      <h2 class="section-heading">Spice up tonight's dinner.</h2>
+      <p class="section-sub">Whole and ground spices for every cuisine.</p>
+      <div class="product-grid" id="spicesGrid" data-grid="spices"></div>
+    </div>
+  </section>
+
+  <!-- Pantry -->
+  <section class="pantry" id="pantry">
+    <div class="container">
+      <span class="section-label">PANTRY STAPLES</span>
+      <h2 class="section-heading">Stock up on the essentials.</h2>
+      <p class="section-sub">Rice, pasta, oils, canned goods, and the dairy basics you reach for every week.</p>
+      <div class="product-grid" data-grid="pantry"></div>
+      <h3 class="subsection-heading">Dairy &amp; eggs</h3>
+      <div class="product-grid" data-grid="dairy"></div>
+    </div>
+  </section>
+
+  <!-- Local & Organic -->
+  <section class="local-organic" id="local-organic">
+    <div class="container local-organic-inner">
+      <div class="local-organic-text">
+        <span class="section-label">LOCAL & ORGANIC</span>
+        <h2 class="section-heading">Know where your<br>food comes from.</h2>
+        <p class="section-sub">We partner with over 30 local farms within 50 miles. From heirloom tomatoes to free-range eggs, your groceries have a story worth telling.</p>
+        <a href="#fresh-picks" class="btn btn-outline">SHOP LOCAL PRODUCE &rarr;</a>
+      </div>
+      <div class="local-organic-visual">
+        <div class="farm-card">
+          <div class="farm-icon">🌾</div>
+          <span class="farm-stat">30+</span>
+          <span class="farm-label">Local Farms</span>
+        </div>
+        <div class="farm-card">
+          <div class="farm-icon">📍</div>
+          <span class="farm-stat">50mi</span>
+          <span class="farm-label">Max Distance</span>
+        </div>
+        <div class="farm-card">
+          <div class="farm-icon">🌿</div>
+          <span class="farm-stat">100%</span>
+          <span class="farm-label">Organic Options</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Westerly -->
+  <section class="why-westerly" id="why-westerly">
+    <div class="container">
+      <span class="section-label section-label-light">WHY WESTERLY</span>
+      <h2 class="section-heading section-heading-light">Your neighborhood market.<br>Done right.</h2>
+      <a href="tel:+15551234567" class="btn btn-primary" style="margin-bottom: 3rem;">CALL THE STORE &rarr;</a>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🌅</div>
+          <h3 class="feature-title">Fresh Daily</h3>
+          <p class="feature-desc">Produce delivered every morning from local farms.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">💰</div>
+          <h3 class="feature-title">Fair Prices</h3>
+          <p class="feature-desc">Honest pricing without hidden markups.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🏘️</div>
+          <h3 class="feature-title">Community First</h3>
+          <p class="feature-desc">Locally owned and operated since day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Weekly Deals -->
+  <section class="weekly-deals" id="weekly-deals">
+    <div class="container weekly-deals-inner">
+      <span class="section-label">WEEKLY DEALS</span>
+      <h2 class="section-heading">Save 15% on seasonal<br>favorites this week.</h2>
+      <p class="section-sub">Sign up for our rewards program or extend your current membership, and get 15% off fresh produce plus a free reusable tote.</p>
+      <div class="product-grid" data-grid="deals"></div>
+    </div>
+  </section>
+
+  <!-- Beverages callout (small section) -->
+  <section class="beverages" id="beverages">
+    <div class="container beverages-inner">
+      <div class="beverages-text">
+        <span class="section-label section-label-light">BEVERAGES</span>
+        <h2 class="section-heading section-heading-light">Craft sodas. Cold press.<br>Local brews on tap.</h2>
+        <p class="section-sub section-sub-light">From fresh-squeezed juices to curated wine and local craft beer, we've got your drinks covered.</p>
+      </div>
+      <div class="product-grid" data-grid="beverages"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="logo footer-logo">
+          <svg class="logo-icon" width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <rect width="36" height="36" rx="8" fill="#2D6A4F"/>
+            <text x="18" y="24" text-anchor="middle" font-size="18" font-weight="bold" fill="white">W</text>
+          </svg>
+          <span class="logo-text">WESTERLY<span class="logo-light">MARKET</span></span>
+        </a>
+        <div class="footer-subscribe">
+          <h4>Stay Fresh</h4>
+          <p>Get weekly deals and recipes in your inbox.</p>
+          <form class="subscribe-form" onsubmit="return false;">
+            <input type="email" placeholder="Your email" aria-label="Email for newsletter">
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook" data-info="Follow Westerly Market on Facebook: @westerlymarket (demo)">FB</a>
+            <a href="#" aria-label="Instagram" data-info="Follow Westerly Market on Instagram: @westerlymarket (demo)">IG</a>
+            <a href="#" aria-label="Twitter" data-info="Follow Westerly Market on X: @westerlymarket (demo)">X</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-columns">
+        <div class="footer-col">
+          <h4>Shop by Dept</h4>
+          <a href="#fresh-picks">Fresh Produce</a>
+          <a href="#deli-bakery">Deli & Bakery</a>
+          <a href="#meat-seafood">Meat & Seafood</a>
+          <a href="#spices">Spices</a>
+          <a href="#pantry">Pantry Staples</a>
+          <a href="#beverages">Beverages</a>
+          <a href="#weekly-deals">Weekly Deals</a>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <a href="#" data-info="Curbside pickup is free on orders over $35. Choose a pickup time at checkout.">Curbside Pickup</a>
+          <a href="#" data-info="Same-day home delivery within 10 miles of the store.">Home Delivery</a>
+          <a href="#" data-info="Catering trays are available with 48 hours notice. Call the store to order.">Catering</a>
+          <a href="#" data-info="Gift cards are available at the front registers in $25, $50 and $100.">Gift Cards</a>
+        </div>
+        <div class="footer-col">
+          <h4>Customer Care</h4>
+          <a href="tel:+15551234567">Contact Us</a>
+          <a href="#" data-info="Need help with an order? Call (555) 123-4567 or sign in to view your orders.">Help Center</a>
+          <a href="#top">Store Hours</a>
+          <a href="#" data-info="Not happy with an item? Bring it back within 30 days for a full refund.">Returns & Refunds</a>
+        </div>
+        <div class="footer-col">
+          <h4>About</h4>
+          <a href="#why-westerly">Our Story</a>
+          <a href="#" data-info="We are hiring! Ask for an application at customer service.">Careers</a>
+          <a href="#" data-info="Westerly donates unsold fresh food to local food banks every day.">Community</a>
+          <a href="#local-organic">Sustainability</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>&copy; 2026 Westerly Market. All rights reserved. Locally owned &amp; operated.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Sign-in modal (demo login) -->
+  <div class="modal-backdrop" id="loginModal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+      <button class="modal-close" type="button" data-close-modal aria-label="Close">&times;</button>
+      <h3 id="loginTitle">Sign in to Westerly</h3>
+      <p class="modal-sub">Demo login. Uses synthetic customer data only.</p>
+      <form id="loginForm">
+        <label>Email<input type="email" id="loginEmail" value="customer1@example.com" required></label>
+        <label>Password<input type="password" id="loginPassword" value="demo1234" required></label>
+        <button type="submit" class="btn btn-primary">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Cart drawer -->
+  <aside class="cart-drawer" id="cartDrawer" hidden>
+    <div class="cart-drawer-head">
+      <h3>Your cart</h3>
+      <button type="button" class="modal-close" id="cartClose" aria-label="Close cart">&times;</button>
+    </div>
+    <ul class="cart-items" id="cartItems"></ul>
+    <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+    <button type="button" class="btn btn-primary" id="checkoutBtn">Checkout</button>
+  </aside>
+
+  <div class="toast" id="toast" role="status" hidden></div>
+
+  <!-- Google Agent chat widget: talks to the ADK agent app through /api/agent (server.js) -->
+  <button class="agent-launcher" id="agentLauncher" type="button" aria-label="Open the Google shopping assistant">
+    <span class="agent-dot" aria-hidden="true"></span> Google Agent
+  </button>
+  <section class="agent-panel" id="agentPanel" hidden aria-label="Google Agent chat">
+    <header class="agent-head">
+      <div>
+        <strong>Google Agent</strong>
+        <span class="agent-sub">Westerly shopping assistant</span>
+      </div>
+      <div class="agent-head-actions">
+        <button type="button" class="agent-new" id="agentNew">New chat</button>
+        <button type="button" class="modal-close" id="agentClose" aria-label="Close chat">&times;</button>
+      </div>
+    </header>
+    <div class="agent-messages" id="agentMessages" aria-live="polite"></div>
+    <div class="agent-chips" id="agentChips">
+      <button type="button" data-prompt="What should I make for dinner tonight?">Dinner ideas</button>
+      <button type="button" data-prompt="I want to make chicken tikka masala tonight">Tikka masala</button>
+    </div>
+    <form class="agent-input" id="agentForm">
+      <input type="text" id="agentText" placeholder="Ask the Google Agent..." autocomplete="off" maxlength="1000" aria-label="Message">
+      <button type="submit" class="btn btn-primary btn-sm">Send</button>
+    </form>
+    <button type="button" class="agent-restart" id="agentRestart" hidden>Start a new chat</button>
+  </section>
+
+  <!-- Data 360 event log (demo only: shows what the Web SDK sends). Hidden on the site; events still go to Data 360.
+       Remove "hidden" to show it again. -->
+  <section class="d360-log" id="d360Log" aria-label="Data 360 event log" hidden>
+    <header class="d360-head">
+      <strong>Data 360 events</strong>
+      <span id="d360Mode" class="d360-mode"></span>
+      <button type="button" id="d360Toggle">Hide</button>
+    </header>
+    <ol id="d360Events"></ol>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

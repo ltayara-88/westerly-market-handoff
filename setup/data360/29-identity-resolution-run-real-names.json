@@ -1,0 +1,10 @@
+{
+  "toolName": "d360_ir_run",
+  "params": {
+    "identityResolution": "Individual_wstr",
+    "input": {
+      "callingApp": "Data360McpServer",
+      "callingAppInfo": "Run after renaming CUST_001-005 to realistic names"
+    }
+  }
+}

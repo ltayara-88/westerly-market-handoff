@@ -1,0 +1,55 @@
+{
+  "toolName": "d360_datastream_create_snowflake",
+  "params": {
+    "streamName": "Westerly_Customer_Names",
+    "label": "Westerly Customer Names",
+    "connectionName": "Westerly_Snowflake",
+    "database": "WESTERLY_MARKET",
+    "schema": "SALES",
+    "objectName": "CUSTOMER_NAMES_V",
+    "dataSpaceName": "default",
+    "dloName": "Westerly_Customer_Names_Sf__dll",
+    "dloLabel": "Westerly Customer Names",
+    "category": "Profile",
+    "dataAccessMode": "DIRECT_ACCESS",
+    "isAccelerationEnabled": false,
+    "fields": [
+      {
+        "name": "CUSTOMER_NAME_ID",
+        "label": "CUSTOMER_NAME_ID",
+        "dataType": "Text",
+        "isPrimaryKey": true
+      },
+      {
+        "name": "CUSTOMER_ID",
+        "label": "CUSTOMER_ID",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "FULL_NAME",
+        "label": "FULL_NAME",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "PARTY_ID_NAME",
+        "label": "PARTY_ID_NAME",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "PARTY_ID_TYPE",
+        "label": "PARTY_ID_TYPE",
+        "dataType": "Text",
+        "isPrimaryKey": false
+      },
+      {
+        "name": "LAST_MODIFIED",
+        "label": "LAST_MODIFIED",
+        "dataType": "DateTime",
+        "isPrimaryKey": false
+      }
+    ]
+  }
+}

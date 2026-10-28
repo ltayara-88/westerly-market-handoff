@@ -1,0 +1,344 @@
+{
+  "FullName": "Westerly_Get_Order_Items",
+  "Metadata": {
+    "apiVersion": 68,
+    "processType": "AutoLaunchedFlow",
+    "status": "Draft",
+    "environments": [
+      "Default"
+    ],
+    "label": "Westerly – Get Order Items",
+    "interviewLabel": "Westerly – Get Order Items {!$Flow.CurrentDateTime}",
+    "processMetadataValues": [
+      {
+        "name": "BuilderType",
+        "value": {
+          "stringValue": "LightningFlowBuilder"
+        }
+      },
+      {
+        "name": "CanvasMode",
+        "value": {
+          "stringValue": "AUTO_LAYOUT_CANVAS"
+        }
+      },
+      {
+        "name": "OriginBuilderType",
+        "value": {
+          "stringValue": "LightningFlowBuilder"
+        }
+      }
+    ],
+    "start": {
+      "locationX": 0,
+      "locationY": 0,
+      "connector": {
+        "targetReference": "Get_Order"
+      }
+    },
+    "variables": [
+      {
+        "name": "orderNumber",
+        "dataType": "String",
+        "isCollection": false,
+        "isInput": true,
+        "isOutput": false
+      },
+      {
+        "name": "customerEmail",
+        "dataType": "String",
+        "isCollection": false,
+        "isInput": true,
+        "isOutput": false
+      },
+      {
+        "name": "isVerified",
+        "dataType": "Boolean",
+        "isCollection": false,
+        "isInput": false,
+        "isOutput": true,
+        "value": {
+          "booleanValue": false
+        }
+      },
+      {
+        "name": "itemsSummary",
+        "dataType": "String",
+        "isCollection": false,
+        "isInput": false,
+        "isOutput": true
+      },
+      {
+        "name": "message",
+        "dataType": "String",
+        "isCollection": false,
+        "isInput": false,
+        "isOutput": true
+      },
+      {
+        "name": "foundCustomerId",
+        "dataType": "String",
+        "isCollection": false,
+        "isInput": false,
+        "isOutput": false
+      },
+      {
+        "name": "foundEmail",
+        "dataType": "String",
+        "isCollection": false,
+        "isInput": false,
+        "isOutput": false
+      }
+    ],
+    "textTemplates": [
+      {
+        "name": "lineText",
+        "isViewedAsPlainText": true,
+        "text": "[{!Loop_Lines.ssot__OrderedQuantity__c} x {!Loop_Lines.ssot__ProductId__c} - ${!Loop_Lines.ssot__TotalLineAmount__c}]"
+      }
+    ],
+    "recordLookups": [
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Get_Order",
+        "label": "Get Order",
+        "object": "ssot__SalesOrder__dlm",
+        "filterLogic": "and",
+        "filters": [
+          {
+            "field": "ssot__Id__c",
+            "operator": "EqualTo",
+            "value": {
+              "elementReference": "orderNumber"
+            }
+          }
+        ],
+        "getFirstRecordOnly": true,
+        "storeOutputAutomatically": false,
+        "assignNullValuesIfNoRecordsFound": true,
+        "outputAssignments": [
+          {
+            "field": "ssot__SoldToCustomerId__c",
+            "assignToReference": "foundCustomerId"
+          }
+        ],
+        "connector": {
+          "targetReference": "Order_is_found"
+        }
+      },
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Get_Email",
+        "label": "Get Email",
+        "object": "ssot__ContactPointEmail__dlm",
+        "filterLogic": "and",
+        "filters": [
+          {
+            "field": "ssot__PartyId__c",
+            "operator": "EqualTo",
+            "value": {
+              "elementReference": "foundCustomerId"
+            }
+          },
+          {
+            "field": "ssot__EmailAddress__c",
+            "operator": "EqualTo",
+            "value": {
+              "elementReference": "customerEmail"
+            }
+          }
+        ],
+        "getFirstRecordOnly": true,
+        "storeOutputAutomatically": false,
+        "assignNullValuesIfNoRecordsFound": true,
+        "outputAssignments": [
+          {
+            "field": "ssot__EmailAddress__c",
+            "assignToReference": "foundEmail"
+          }
+        ],
+        "connector": {
+          "targetReference": "Email_matches"
+        }
+      },
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Get_Lines",
+        "label": "Get Lines",
+        "object": "ssot__SalesOrderProduct__dlm",
+        "filterLogic": "and",
+        "filters": [
+          {
+            "field": "ssot__SalesOrderId__c",
+            "operator": "EqualTo",
+            "value": {
+              "elementReference": "orderNumber"
+            }
+          }
+        ],
+        "getFirstRecordOnly": false,
+        "storeOutputAutomatically": true,
+        "assignNullValuesIfNoRecordsFound": false,
+        "queriedFields": [
+          "ssot__ProductId__c",
+          "ssot__OrderedQuantity__c",
+          "ssot__TotalLineAmount__c"
+        ],
+        "connector": {
+          "targetReference": "Loop_Lines"
+        }
+      }
+    ],
+    "decisions": [
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Order_is_found",
+        "label": "Order is found",
+        "defaultConnector": {
+          "targetReference": "Set_Not_Found_Message"
+        },
+        "defaultConnectorLabel": "Not found",
+        "rules": [
+          {
+            "name": "Order_found",
+            "label": "Order is Found",
+            "conditionLogic": "and",
+            "conditions": [
+              {
+                "leftValueReference": "foundCustomerId",
+                "operator": "IsNull",
+                "rightValue": {
+                  "booleanValue": false
+                }
+              }
+            ],
+            "connector": {
+              "targetReference": "Get_Email"
+            }
+          }
+        ]
+      },
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Email_matches",
+        "label": "Email matches?",
+        "defaultConnector": {
+          "targetReference": "Set_Not_Verified_Message"
+        },
+        "defaultConnectorLabel": "Not Verified",
+        "rules": [
+          {
+            "name": "Verified",
+            "label": "Verified",
+            "conditionLogic": "and",
+            "conditions": [
+              {
+                "leftValueReference": "foundEmail",
+                "operator": "IsNull",
+                "rightValue": {
+                  "booleanValue": false
+                }
+              }
+            ],
+            "connector": {
+              "targetReference": "Get_Lines"
+            }
+          }
+        ]
+      }
+    ],
+    "loops": [
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Loop_Lines",
+        "label": "Loop Lines",
+        "collectionReference": "Get_Lines",
+        "iterationOrder": "Asc",
+        "nextValueConnector": {
+          "targetReference": "Add_Line"
+        },
+        "noMoreValuesConnector": {
+          "targetReference": "Set_Verified"
+        }
+      }
+    ],
+    "assignments": [
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Set_Not_Found_Message",
+        "label": "Set Not Found Message",
+        "assignmentItems": [
+          {
+            "assignToReference": "message",
+            "operator": "Assign",
+            "value": {
+              "stringValue": "We couldn't find that order number. Please check it and try again."
+            }
+          }
+        ]
+      },
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Set_Not_Verified_Message",
+        "label": "Set Not Verified Message",
+        "assignmentItems": [
+          {
+            "assignToReference": "message",
+            "operator": "Assign",
+            "value": {
+              "stringValue": "That email doesn't match this order. Please check both and try again."
+            }
+          }
+        ]
+      },
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Add_Line",
+        "label": "Add Line",
+        "assignmentItems": [
+          {
+            "assignToReference": "itemsSummary",
+            "operator": "Add",
+            "value": {
+              "elementReference": "lineText"
+            }
+          }
+        ],
+        "connector": {
+          "targetReference": "Loop_Lines"
+        }
+      },
+      {
+        "locationX": 0,
+        "locationY": 0,
+        "name": "Set_Verified",
+        "label": "Set Verified",
+        "assignmentItems": [
+          {
+            "assignToReference": "isVerified",
+            "operator": "Assign",
+            "value": {
+              "booleanValue": true
+            }
+          },
+          {
+            "assignToReference": "message",
+            "operator": "Assign",
+            "value": {
+              "stringValue": "Order items found."
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

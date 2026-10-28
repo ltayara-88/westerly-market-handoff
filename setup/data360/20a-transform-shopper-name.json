@@ -1,0 +1,62 @@
+{
+  "dataTransformObject": {
+    "name": "Westerly_Shopper_Name_Transform",
+    "label": "Westerly Shopper Name Transform",
+    "description": "Daily batch copy of first/last name from the unified individual into Westerly_Shopper_Name__dll (mapped to Westerly_Shopper_Name__dlm) for the profile page name card",
+    "dataSpaceName": "default",
+    "type": "BATCH",
+    "definition": {
+      "type": "DCSQL",
+      "version": "67.0",
+      "name": "Westerly_Shopper_Name_Transform",
+      "label": "Westerly Shopper Name Transform",
+      "outputDataObjects": [
+        {
+          "name": "Westerly_Shopper_Name__dll",
+          "label": "Shopper Name",
+          "dataspaceName": "default",
+          "type": "dataLakeObject",
+          "category": "Other",
+          "fields": [
+            {
+              "name": "Id__c",
+              "label": "Shopper Name Id",
+              "type": "Text",
+              "isPrimaryKey": true
+            },
+            {
+              "name": "PartyId__c",
+              "label": "Unified Individual",
+              "type": "Text",
+              "isPrimaryKey": false
+            },
+            {
+              "name": "FirstName__c",
+              "label": "First Name",
+              "type": "Text",
+              "isPrimaryKey": false
+            },
+            {
+              "name": "LastName__c",
+              "label": "Last Name",
+              "type": "Text",
+              "isPrimaryKey": false
+            }
+          ]
+        }
+      ],
+      "manifest": {
+        "nodes": {
+          "model.input1": {
+            "name": "input1",
+            "compiled_code": "SELECT ssot__Id__c AS Id__c, ssot__Id__c AS PartyId__c, ssot__FirstName__c AS FirstName__c, ssot__LastName__c AS LastName__c FROM UnifiedssotIndividualWstr__dlm",
+            "config": {
+              "materialized": "table"
+            },
+            "relation_name": "Westerly_Shopper_Name__dll"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "actionUrls": {
+    "action": "DcSqlBatchAction",
+    "cancelAction": "/services/data/v68.0/ssot/data-transforms/Westerly_Shopper_Name_Transform/actions/cancel",
+    "refreshStatusAction": "/services/data/v68.0/ssot/data-transforms/Westerly_Shopper_Name_Transform/actions/refresh-status",
+    "retryAction": "/services/data/v68.0/ssot/data-transforms/Westerly_Shopper_Name_Transform/actions/retry",
+    "runAction": "/services/data/v68.0/ssot/data-transforms/Westerly_Shopper_Name_Transform/actions/run"
+  },
+  "createdBy": {
+    "id": "<USER_ID>",
+    "name": "<USER_NAME>",
+    "profilePhotoUrl": "https://<MY_DOMAIN>.file.force.com/profilephoto/005/T"
+  },
+  "createdDate": "2026-10-23T15:00:30.000Z",
+  "creationType": "CUSTOM",
+  "dataSpaceName": "default",
+  "definition": {
+    "label": "Westerly Shopper Name Transform",
+    "manifest": {
+      "macros": {},
+      "nodes": {
+        "model.input1": {
+          "compiled_code": "SELECT ssot__Id__c AS Id__c, ssot__Id__c AS PartyId__c, ssot__FirstName__c AS FirstName__c, ssot__LastName__c AS LastName__c FROM UnifiedssotIndividualWstr__dlm",
+          "config": {
+            "materialized": "table"
+          },
+          "name": "input1",
+          "relation_name": "Westerly_Shopper_Name__dll"
+        }
+      },
+      "sources": {}
+    },
+    "name": "Westerly_Shopper_Name_Transform",
+    "outputDataObjects": [
+      {
+        "category": "Other",
+        "createdDate": "2026-10-23T15:00:28.000Z",
+        "fields": [
+          {
+            "isPrimaryKey": true,
+            "keyQualifierField": "KQ_Id",
+            "label": "Shopper Name Id",
+            "name": "Id__c",
+            "type": "Text"
+          },
+          {
+            "isPrimaryKey": false,
+            "keyQualifierField": "KQ_PartyId",
+            "label": "Unified Individual",
+            "name": "PartyId__c",
+            "type": "Text"
+          },
+          {
+            "isPrimaryKey": false,
+            "keyQualifierField": "KQ_FirstName",
+            "label": "First Name",
+            "name": "FirstName__c",
+            "type": "Text"
+          },
+          {
+            "isPrimaryKey": false,
+            "keyQualifierField": "KQ_LastName",
+            "label": "Last Name",
+            "name": "LastName__c",
+            "type": "Text"
+          }
+        ],
+        "id": "0gOjV000000puBRUAY",
+        "label": "Shopper Name",
+        "lastModifiedDate": "2026-10-23T15:01:20.000Z",
+        "name": "Westerly_Shopper_Name__dll",
+        "status": "active",
+        "type": "dataLakeObject"
+      }
+    ],
+    "schedule": {
+      "frequency": "Daily",
+      "interval": 1,
+      "nextScheduledDate": "2026-10-27T13:00:00.000Z",
+      "time": {
+        "hour": 6,
+        "minute": 0,
+        "timezone": {
+          "gmtOffset": -7,
+          "name": "Pacific Daylight Time",
+          "zoneId": "America/Los_Angeles"
+        }
+      },
+      "type": "Daily"
+    },
+    "type": "DCSQL"
+  },
+  "description": "Daily batch copy of first/last name from the unified individual into Westerly_Shopper_Name__dll (mapped to Westerly_Shopper_Name__dlm) for the profile page name card",
+  "fullRunFrequency": "DAILY",
+  "id": "1dtjV000000Tw2DQAS",
+  "label": "Westerly Shopper Name Transform",
+  "lastModifiedBy": {
+    "id": "<USER_ID>",
+    "name": "<USER_NAME>",
+    "profilePhotoUrl": "https://<MY_DOMAIN>.file.force.com/profilephoto/005/T"
+  },
+  "lastModifiedDate": "2026-10-26T13:07:14.000Z",
+  "lastRunDate": "2026-10-26T13:07:12.000Z",
+  "lastRunStatus": "SUCCESS",
+  "name": "Westerly_Shopper_Name_Transform",
+  "status": "ACTIVE",
+  "type": "BATCH",
+  "url": "/services/data/v68.0/ssot/data-transforms/Westerly_Shopper_Name_Transform"
+}

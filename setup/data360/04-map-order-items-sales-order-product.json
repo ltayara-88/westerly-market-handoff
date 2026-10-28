@@ -1,0 +1,40 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_Order_Items__dll",
+      "targetEntityDeveloperName": "ssot__SalesOrderProduct__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "order_item_id__c",
+          "targetFieldDeveloperName": "ssot__Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "order_id__c",
+          "targetFieldDeveloperName": "ssot__SalesOrderId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "sku__c",
+          "targetFieldDeveloperName": "ssot__ProductId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "quantity__c",
+          "targetFieldDeveloperName": "ssot__OrderedQuantity__c"
+        },
+        {
+          "sourceFieldDeveloperName": "unit_price__c",
+          "targetFieldDeveloperName": "ssot__UnitPriceAmount__c"
+        },
+        {
+          "sourceFieldDeveloperName": "line_total__c",
+          "targetFieldDeveloperName": "ssot__TotalLineAmount__c"
+        },
+        {
+          "sourceFieldDeveloperName": "last_modified__c",
+          "targetFieldDeveloperName": "ssot__LastModifiedDate__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

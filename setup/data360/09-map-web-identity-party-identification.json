@@ -1,0 +1,32 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_site_identity_18F26CBE__dll",
+      "targetEntityDeveloperName": "ssot__PartyIdentification__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "deviceId__c",
+          "targetFieldDeveloperName": "ssot__Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "deviceId__c",
+          "targetFieldDeveloperName": "ssot__PartyId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "customerId__c",
+          "targetFieldDeveloperName": "ssot__IdentificationNumber__c"
+        },
+        {
+          "sourceFieldDeveloperName": "DataSource__c",
+          "targetFieldDeveloperName": "ssot__DataSourceId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "DataSourceObject__c",
+          "targetFieldDeveloperName": "ssot__DataSourceObjectId__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

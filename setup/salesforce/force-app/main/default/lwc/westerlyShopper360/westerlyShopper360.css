@@ -1,0 +1,60 @@
+.search {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.75rem;
+}
+
+.search_input {
+    flex: 1;
+    max-width: 28rem;
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.matches {
+    flex: 0 1 18rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.match {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #c9c9c9;
+    border-radius: 0.25rem;
+    margin-bottom: 0.5rem;
+    background: #fff;
+    text-align: left;
+    cursor: pointer;
+}
+
+.match:hover,
+.match:focus-visible {
+    border-color: #0e7c9a;
+}
+
+.match_selected {
+    border-color: #0e7c9a;
+    box-shadow: inset 4px 0 0 #0e7c9a;
+}
+
+.match_name {
+    font-weight: 600;
+}
+
+.match_id {
+    font-size: 0.8125rem;
+    color: #5c5c5c;
+}
+
+.card {
+    flex: 0 1 22rem;
+}

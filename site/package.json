@@ -1,0 +1,12 @@
+{
+  "name": "westerly-market",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Westerly Market demo storefront",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "20.x"
+  }
+}

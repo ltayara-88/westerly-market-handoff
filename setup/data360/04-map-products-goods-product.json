@@ -1,0 +1,36 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_Products__dll",
+      "targetEntityDeveloperName": "ssot__GoodsProduct__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "sku__c",
+          "targetFieldDeveloperName": "ssot__Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "sku__c",
+          "targetFieldDeveloperName": "ssot__ProductSKU__c"
+        },
+        {
+          "sourceFieldDeveloperName": "product_name__c",
+          "targetFieldDeveloperName": "ssot__Name__c"
+        },
+        {
+          "sourceFieldDeveloperName": "category__c",
+          "targetFieldDeveloperName": "ssot__PrimaryProductCategory__c"
+        },
+        {
+          "sourceFieldDeveloperName": "regular_price__c",
+          "targetFieldDeveloperName": "ssot__MSRPAmount__c"
+        },
+        {
+          "sourceFieldDeveloperName": "last_modified__c",
+          "targetFieldDeveloperName": "ssot__LastModifiedDate__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

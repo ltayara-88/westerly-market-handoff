@@ -1,0 +1,16 @@
+{
+  "toolName": "d360_ci_create",
+  "params": {
+    "input": {
+      "apiName": "Westerly_Avg_Cart_Value__cio",
+      "displayName": "Avg Cart Value",
+      "description": "Single-measure CI so the profile page tile is titled \"Avg Cart Value\"; keyed on the unified individual Id",
+      "definitionType": "CalculatedMetric",
+      "dataSpaceName": "default",
+      "publishScheduleInterval": "TwentyFour",
+      "publishScheduleStartDateTime": "2026-10-24T08:00",
+      "publishScheduleTimeZone": "UTC",
+      "expression": "SELECT UnifiedssotIndividualWstr__dlm.ssot__Id__c AS unified_individual_id__c, ROUND(AVG(ssot__SalesOrder__dlm.ssot__GrandTotalAmount__c), 2) AS avg_cart_value__c FROM ssot__SalesOrder__dlm INNER JOIN UnifiedLinkssotIndividualWstr__dlm ON ssot__SalesOrder__dlm.ssot__SoldToCustomerId__c = UnifiedLinkssotIndividualWstr__dlm.SourceRecordId__c INNER JOIN UnifiedssotIndividualWstr__dlm ON UnifiedLinkssotIndividualWstr__dlm.UnifiedRecordId__c = UnifiedssotIndividualWstr__dlm.ssot__Id__c GROUP BY UnifiedssotIndividualWstr__dlm.ssot__Id__c"
+    }
+  }
+}

@@ -1,0 +1,366 @@
+[
+ {
+  "sku": "PR-STRAW",
+  "name": "Organic Strawberries",
+  "detail": "1 lb container",
+  "price": 4.24,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-AVO",
+  "name": "Hass Avocados",
+  "detail": "Pack of 4",
+  "price": 4.67,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-BLUE",
+  "name": "Wild Blueberries",
+  "detail": "6 oz container",
+  "price": 3.39,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-LEMON",
+  "name": "Meyer Lemons",
+  "detail": "Bag of 6",
+  "price": 3.49,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-SPINACH",
+  "name": "Baby Spinach",
+  "detail": "5 oz clamshell",
+  "price": 3.39,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-TOMATO",
+  "name": "Roma Tomatoes",
+  "detail": "per lb",
+  "price": 2.49,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-GARLIC",
+  "name": "Garlic",
+  "detail": "3-bulb pack",
+  "price": 1.99,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-GINGER",
+  "name": "Fresh Ginger",
+  "detail": "per 4 oz",
+  "price": 1.49,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-ONION",
+  "name": "Yellow Onions",
+  "detail": "3 lb bag",
+  "price": 3.29,
+  "category": "produce"
+ },
+ {
+  "sku": "PR-CILANTRO",
+  "name": "Fresh Cilantro",
+  "detail": "1 bunch",
+  "price": 0.99,
+  "category": "produce"
+ },
+ {
+  "sku": "DB-SOURDOUGH",
+  "name": "Country Sourdough Loaf",
+  "detail": "Baked this morning",
+  "price": 6.49,
+  "category": "deli"
+ },
+ {
+  "sku": "DB-CROISSANT",
+  "name": "Butter Croissants",
+  "detail": "Pack of 4",
+  "price": 5.99,
+  "category": "deli"
+ },
+ {
+  "sku": "DB-NAAN",
+  "name": "Garlic Naan",
+  "detail": "Pack of 4",
+  "price": 3.99,
+  "category": "deli"
+ },
+ {
+  "sku": "DB-BAGUETTE",
+  "name": "French Baguette",
+  "detail": "1 loaf",
+  "price": 2.99,
+  "category": "deli"
+ },
+ {
+  "sku": "DB-TURKEY",
+  "name": "Oven-Roasted Turkey",
+  "detail": "1/2 lb, sliced",
+  "price": 7.49,
+  "category": "deli"
+ },
+ {
+  "sku": "DB-HUMMUS",
+  "name": "House Hummus",
+  "detail": "10 oz",
+  "price": 4.49,
+  "category": "deli"
+ },
+ {
+  "sku": "DB-ROTISSERIE",
+  "name": "Rotisserie Chicken",
+  "detail": "Whole, hot and ready",
+  "price": 8.99,
+  "category": "deli"
+ },
+ {
+  "sku": "DB-COOKIES",
+  "name": "Chocolate Chip Cookies",
+  "detail": "Pack of 6",
+  "price": 4.99,
+  "category": "deli"
+ },
+ {
+  "sku": "MT-CHICKEN",
+  "name": "Boneless Chicken Thighs",
+  "detail": "1.5 lb",
+  "price": 8.99,
+  "category": "meat"
+ },
+ {
+  "sku": "MT-BREAST",
+  "name": "Chicken Breasts",
+  "detail": "1.5 lb",
+  "price": 9.49,
+  "category": "meat"
+ },
+ {
+  "sku": "MT-BEEF",
+  "name": "Grass-Fed Ground Beef",
+  "detail": "1 lb, 85/15",
+  "price": 6.79,
+  "category": "meat"
+ },
+ {
+  "sku": "MT-PORK",
+  "name": "Pork Tenderloin",
+  "detail": "About 1.25 lb",
+  "price": 8.49,
+  "category": "meat"
+ },
+ {
+  "sku": "SF-SALMON",
+  "name": "Atlantic Salmon Fillet",
+  "detail": "1 lb",
+  "price": 12.99,
+  "category": "meat"
+ },
+ {
+  "sku": "SF-SHRIMP",
+  "name": "Wild Gulf Shrimp",
+  "detail": "1 lb, peeled",
+  "price": 11.99,
+  "category": "meat"
+ },
+ {
+  "sku": "SP-GARAM",
+  "name": "Garam Masala",
+  "detail": "2 oz jar",
+  "price": 4.49,
+  "category": "spices"
+ },
+ {
+  "sku": "SP-CUMIN",
+  "name": "Ground Cumin",
+  "detail": "2 oz jar",
+  "price": 3.99,
+  "category": "spices"
+ },
+ {
+  "sku": "SP-TURMERIC",
+  "name": "Ground Turmeric",
+  "detail": "2 oz jar",
+  "price": 3.79,
+  "category": "spices"
+ },
+ {
+  "sku": "SP-PAPRIKA",
+  "name": "Smoked Paprika",
+  "detail": "2 oz jar",
+  "price": 4.29,
+  "category": "spices"
+ },
+ {
+  "sku": "SP-CORIANDER",
+  "name": "Ground Coriander",
+  "detail": "1.5 oz jar",
+  "price": 3.49,
+  "category": "spices"
+ },
+ {
+  "sku": "SP-CARDAMOM",
+  "name": "Green Cardamom Pods",
+  "detail": "1 oz jar",
+  "price": 6.99,
+  "category": "spices"
+ },
+ {
+  "sku": "SP-CINNAMON",
+  "name": "Cinnamon Sticks",
+  "detail": "1 oz bag",
+  "price": 3.99,
+  "category": "spices"
+ },
+ {
+  "sku": "SP-CHILI",
+  "name": "Red Chili Flakes",
+  "detail": "1.5 oz jar",
+  "price": 2.99,
+  "category": "spices"
+ },
+ {
+  "sku": "PN-RICE",
+  "name": "Basmati Rice",
+  "detail": "2 lb bag",
+  "price": 5.49,
+  "category": "pantry"
+ },
+ {
+  "sku": "PN-OIL",
+  "name": "Extra Virgin Olive Oil",
+  "detail": "500 ml",
+  "price": 9.99,
+  "category": "pantry"
+ },
+ {
+  "sku": "PN-TOMATO",
+  "name": "Crushed Tomatoes",
+  "detail": "28 oz can",
+  "price": 2.79,
+  "category": "pantry"
+ },
+ {
+  "sku": "PN-COCONUT",
+  "name": "Coconut Milk",
+  "detail": "13.5 oz can",
+  "price": 2.49,
+  "category": "pantry"
+ },
+ {
+  "sku": "PN-CHICKPEA",
+  "name": "Chickpeas",
+  "detail": "15 oz can",
+  "price": 1.69,
+  "category": "pantry"
+ },
+ {
+  "sku": "PN-PASTA",
+  "name": "Penne Pasta",
+  "detail": "1 lb box",
+  "price": 1.99,
+  "category": "pantry"
+ },
+ {
+  "sku": "PN-HONEY",
+  "name": "Local Wildflower Honey",
+  "detail": "12 oz jar",
+  "price": 8.99,
+  "category": "pantry"
+ },
+ {
+  "sku": "PN-FLOUR",
+  "name": "All-Purpose Flour",
+  "detail": "5 lb bag",
+  "price": 4.29,
+  "category": "pantry"
+ },
+ {
+  "sku": "DY-YOGURT",
+  "name": "Plain Greek Yogurt",
+  "detail": "16 oz",
+  "price": 4.29,
+  "category": "dairy"
+ },
+ {
+  "sku": "PN-CREAM",
+  "name": "Heavy Cream",
+  "detail": "1 pint",
+  "price": 3.99,
+  "category": "dairy"
+ },
+ {
+  "sku": "DY-EGGS",
+  "name": "Free-Range Eggs",
+  "detail": "1 dozen",
+  "price": 5.49,
+  "category": "dairy"
+ },
+ {
+  "sku": "DY-BUTTER",
+  "name": "Unsalted Butter",
+  "detail": "1 lb",
+  "price": 4.99,
+  "category": "dairy"
+ },
+ {
+  "sku": "BV-OJ",
+  "name": "Cold-Pressed Orange Juice",
+  "detail": "32 oz",
+  "price": 6.99,
+  "category": "beverages"
+ },
+ {
+  "sku": "BV-SPARKLING",
+  "name": "Sparkling Water",
+  "detail": "8 x 12 oz cans",
+  "price": 4.67,
+  "category": "beverages"
+ },
+ {
+  "sku": "BV-ROOTBEER",
+  "name": "Craft Root Beer",
+  "detail": "4 x 12 oz bottles",
+  "price": 6.99,
+  "category": "beverages"
+ },
+ {
+  "sku": "BV-COLDBREW",
+  "name": "Cold Brew Coffee",
+  "detail": "32 oz",
+  "price": 5.49,
+  "category": "beverages"
+ },
+ {
+  "sku": "BV-KOMBUCHA",
+  "name": "Ginger Kombucha",
+  "detail": "16 oz",
+  "price": 3.99,
+  "category": "beverages"
+ },
+ {
+  "sku": "BV-OATMILK",
+  "name": "Oat Milk",
+  "detail": "64 oz",
+  "price": 4.79,
+  "category": "beverages"
+ },
+ {
+  "sku": "BV-TEA",
+  "name": "Unsweetened Iced Tea",
+  "detail": "59 oz",
+  "price": 3.49,
+  "category": "beverages"
+ },
+ {
+  "sku": "BV-IPA",
+  "name": "Local IPA",
+  "detail": "6 x 12 oz cans (21+)",
+  "price": 11.99,
+  "category": "beverages"
+ }
+]

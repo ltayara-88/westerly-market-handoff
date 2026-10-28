@@ -1,0 +1,32 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_Store_Inventory__dll",
+      "targetEntityDeveloperName": "Store_Inventory__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "inventory_id__c",
+          "targetFieldDeveloperName": "Inventory_Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "store_id__c",
+          "targetFieldDeveloperName": "Store_Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "sku__c",
+          "targetFieldDeveloperName": "SKU__c"
+        },
+        {
+          "sourceFieldDeveloperName": "quantity_on_hand__c",
+          "targetFieldDeveloperName": "Quantity_On_Hand__c"
+        },
+        {
+          "sourceFieldDeveloperName": "last_modified__c",
+          "targetFieldDeveloperName": "Last_Modified__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}

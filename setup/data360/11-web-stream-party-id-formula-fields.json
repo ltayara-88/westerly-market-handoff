@@ -1,0 +1,20 @@
+{
+  "toolName": "d360_datastream_update",
+  "params": {
+    "recordIdOrDeveloperName": "Westerly_site_identity_18F26CBE",
+    "input": {
+      "mappings": [
+        {
+          "targetFieldName": "party_id_name",
+          "transformationFormula": "\"Westerly Customer ID\"",
+          "targetFieldReturntype": "Text"
+        },
+        {
+          "targetFieldName": "party_id_type",
+          "transformationFormula": "\"Westerly Customer ID\"",
+          "targetFieldReturntype": "Text"
+        }
+      ]
+    }
+  }
+}

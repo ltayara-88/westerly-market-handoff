@@ -1,0 +1,24 @@
+{
+  "toolName": "d360_dmo_mapping_create",
+  "params": {
+    "input": {
+      "sourceEntityDeveloperName": "Westerly_Customers__dll",
+      "targetEntityDeveloperName": "ssot__ContactPointEmail__dlm",
+      "fieldMapping": [
+        {
+          "sourceFieldDeveloperName": "customer_id__c",
+          "targetFieldDeveloperName": "ssot__Id__c"
+        },
+        {
+          "sourceFieldDeveloperName": "customer_id__c",
+          "targetFieldDeveloperName": "ssot__PartyId__c"
+        },
+        {
+          "sourceFieldDeveloperName": "email__c",
+          "targetFieldDeveloperName": "ssot__EmailAddress__c"
+        }
+      ]
+    },
+    "dataspace": "default"
+  }
+}
